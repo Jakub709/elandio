@@ -1,0 +1,17 @@
+extends layouts/message-layout.pug
+
+block content    
+    .resultsContainer
+
+block headerButton
+    .newChat
+        a(href="/messages/new")
+            //- i.fa.fa-comments
+            span
+                b 📬 Vytvořit nový chat
+
+
+block scripts
+
+    script(src="/js/inboxPage.js")
+    

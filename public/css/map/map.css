@@ -1,0 +1,43 @@
+:root {
+  --color-dark--map: #2d3439;
+  --color-light--map: #ececec;
+}
+
+.mapa {
+  height: 90vh;
+}
+
+.fixed {
+  position: fixed;
+  z-index: 999;
+}
+
+/* MAP */
+#map {
+  /* flex: 1; */
+  height: 100%;
+  width: 100%;
+  border-radius: 0.25rem;
+  position: relative;
+  z-index: 99;
+}
+
+/* Popup width is defined in JS using options */
+.leaflet-popup .leaflet-popup-content-wrapper {
+  background-color: var(--color-dark--map);
+  color: var(--color-light--map);
+  border-radius: 5px;
+  padding-right: 0.6rem;
+}
+
+.leaflet-popup a {
+  color: white;
+}
+
+.leaflet-popup .leaflet-popup-content {
+  font-size: 1rem;
+}
+
+.leaflet-popup .leaflet-popup-tip {
+  background-color: var(--color-dark--map);
+}

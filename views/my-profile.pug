@@ -1,0 +1,183 @@
+include mixins/mixins
+
+doctype html
+head
+  meta(charset='UTF-8')
+  meta(name='viewport' content='width=device-width, initial-scale=1.0')
+  // ========== BOX ICONS ========== //
+  link(rel='icon' href='/images/favicon.png')
+  link(rel='stylesheet' href='https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css')
+  // ========== CSS ========== //
+  link(rel='stylesheet' href='/css/general/generalInner.css')
+  link(rel='stylesheet' href='/css/myProfile/myProfile.css')
+  link(rel='stylesheet', href='https://cdnjs.cloudflare.com/ajax/libs/cropperjs/1.5.9/cropper.min.css')
+  // ========== JQUERY, SWEET, CROPPER ========== //
+  script(src='https://code.jquery.com/jquery-3.5.1.min.js' integrity='sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=' crossorigin='anonymous')
+  script(src='//cdn.jsdelivr.net/npm/sweetalert2@11')
+  script(src='https://cdnjs.cloudflare.com/ajax/libs/cropperjs/1.5.12/cropper.min.js')
+  title Editovat profil
+// ========== HEADER ========== //
+header.header
+  .header__container
+    img.header__img(src='images/ilandio_logo.png' alt='')
+    p.header__logo M&uring;j profil
+    p.header__logo__second
+      i &bdquo;J&aacute; u&ccaron;&iacute;m tebe, jiný učí mě.
+    .header__toggle
+      i#header-toggle.bx.bx-menu
+// ========== NAV ========== //
+#navbar.nav
+  nav.nav__container
+    div
+      a.nav__link.nav__logo(href='https://www.facebook.com/ilandio/' target='_blank')
+        i.bx.bxs-disc.nav__icon
+        span.nav__logo-name Novinky
+      .nav__list
+        .nav__items
+          h3.nav__subtitle P&rcaron;&iacute;sp&ecaron;vky
+          a.nav__link.active(href='/posts-list')
+            i.bx.bx-task.nav__icon
+            span.nav__name Seznam p&rcaron;&iacute;sp&ecaron;vk&uring;
+          a.nav__link.active(href='/my-posts')
+            i.bx.bx-pencil.nav__icon
+            span.nav__name Moje p&rcaron;&iacute;sp&ecaron;vky
+        .nav__items
+          h3.nav__subtitle U&zcaron;ivatel&eacute;
+          a.nav__link(href='/users-list')
+            i.bx.bx-user.nav__icon
+            span.nav__name Seznam u&zcaron;ivatel&uring;
+          .nav__dropdown
+            a.nav__link(href='#')
+              i.bx.bx-cog.nav__icon
+              span.nav__name M&uring;j profil
+              i.bx.bx-chevron-down.nav__icon.nav__dropdown-icon
+            .nav__dropdown-collapse
+              .nav__dropdown-content
+                a.nav__dropdown-item(href='/my-profile') Editovat profil
+                a.nav__dropdown-item(href='/my-profile-watch') Zobrazit profil
+        .nav__items
+          h3.nav__subtitle Ostatn&iacute;
+          a.nav__link(href='/bank')
+            i.bx.bx-coin-stack.nav__icon
+            span.nav__name Banka
+          a.nav__link(href='/users-list-map')
+            i.bx.bx-map.nav__icon
+            span.nav__name Mapa setkání
+          a.nav__link(href='/messages')
+            i.bx.bx-message-rounded.nav__icon
+            span.nav__name Zpr&aacute;vy
+            span#messagesBadge
+    a.nav__link.nav__logout(href='/logout')
+      i.bx.bx-log-out.nav__icon
+      span.nav__name Odhl&aacute;sit se
+// ========== CONTENTS ========== //
+main
+  .my-profile-page
+    .container
+      .nav-profile
+        ul
+          li.user-demand-supply.active(onclick='tabs(0)') Profil
+          li.user-followers(onclick='tabs(1)') O mně
+          li.user-following(onclick='tabs(2)') Heslo
+      .tab
+        .my-profile
+          form.inputField
+            div
+              .inputField-data
+                p.heading-input Z&aacute;kladn&iacute; &uacute;daje
+                .grid.grid-row-gap.grid--3-cols
+                  .form-item
+                    input#name.input-field(type='text' name='name' placeholder='')
+                    label(for='name') Jm&eacute;no a p&rcaron;&iacute;jmen&iacute;
+                  .form-item
+                    input#email.input-field(type='text' name='email' placeholder='')
+                    label(for='email') Email
+                  .form-item
+                    input#hex.input-field(type='text' name='hex' placeholder='hex, např. #ffffff')
+                    label(for='hex') Barva pozad&iacute; profilu
+                p.heading-input Soci&aacute;ln&iacute; s&iacute;t&ecaron;
+                .grid.grid-row-gap.grid--3-cols
+                  .form-item
+                    input#facebook.input-field(type='text' name='facebook' placeholder='')
+                    label(for='facebook') Facebook Username
+                  .form-item
+                    input#linkedin.input-field(type='text' name='linkedin' placeholder='')
+                    label(for='linkedin') LinkedIn Resource ID
+                  .form-item
+                    input#github.input-field(type='text' name='github' placeholder='')
+                    label(for='github') GitHub Username
+                p.heading-input Pracovn&iacute; &uacute;daje
+                .grid.grid-row-gap.grid--3-cols
+                  .form-item
+                    input#job.input-field(type='text' list='categoryList' name='job' placeholder='')
+                    datalist#categoryList
+                      //- option(value='GreenFoxAcademy')
+                      option(value='iLandio')
+                      option(value='MUNI')
+                      //- option(value='StartupJobs')
+                    label(for='job') Kde pracuji
+                  .form-item
+                    input#position.input-field(type='text' name='position' placeholder='')
+                    label(for='position') Pracovn&iacute; pozice
+                  .form-item
+                    input#region.input-field(list='regionList' name='region' placeholder='')
+                    datalist#regionList
+                      option(value='Brno')
+                      option(value='Ostrava')
+                      option(value='Praha')
+                      option(value='Středočeský kraj')
+                      option(value='Jihočeský kraj')
+                      option(value='Plzeňský kraj')
+                      option(value='Karlovarský kraj')
+                      option(value='Ústecký kraj')
+                      option(value='Liberecký kraj')
+                      option(value='Královehradecký kraj')
+                      option(value='Pardubický kraj')
+                      option(value='Kraj Vysočina')
+                      option(value='Jihomoravský kraj')
+                      option(value='Olomoucký kraj')
+                      option(value='Moravskoslezský kraj')
+                      option(value='Zlínský kraj')
+                    label(for='region') Region
+            input#updateMain.button-1.button-1-colors(type='submit' value='Uložit')
+        .my-profile
+          .my-foto.grid.grid--2-cols
+            .left-side
+              p.heading-input Fotografie
+              img.avatar.img-circle.img-thumbnail(src='http://ssl.gstatic.com/accounts/ui/avatar_2x.png' alt='avatar')
+              +createImageUploadModal()
+            .right-side
+      .my-profile.tab
+          form.inputField
+            .inputField-data
+              p.heading-input O mn&ecaron;
+              .grid
+                .form-item
+                  textarea#about(name='about' cols='30' rows='10' placeholder='Představte se nám :-)')
+                  label(for='about') Pov&ecaron;zte n&aacute;m n&ecaron;co zaj&iacute;mav&eacute;ho
+                .form-item
+                 p.heading-input-location Mapa setkání
+                 p.locationText Podělte se o souřadnice vašeho oblíbeného místa k setkání :-). Může se jednat o prostory vaší firmy, knihovnu, školu či oblíbenou kavárnu.
+                 .grid.grid-row-gap.grid--2-cols
+                  input#locationLatitude.input-field(type='number' name='locationLatitude' placeholder='zeměpisná šířka, např. 49.19586 pro Bar, který neexistuje :-)')
+                  label(for='locationLatitude')
+                  input#locationLongitude.input-field(type='number' name='locationLongitude' placeholder='zeměpisná délka, např. 16.60972 pro Bar, který neexistuje :-)')
+                  label(for='locationLongitude')
+            input#updateAbout.button-1.button-1-colors(type='submit' value='Uložit')
+      .my-profile.tab
+        form.inputField
+          .inputField-data
+            p.heading-input Zm&ecaron;na hesla
+            .grid.grid-row-gap.grid--2-cols-same
+              .form-item
+                input#password.input-field(type='password' name='password' placeholder='')
+                label(for='password') Nov&eacute; heslo
+              .form-item
+                input#passwordConf.input-field(type='password' name='passwordConf' placeholder='')
+                label(for='passwordConf') Potvr&dcaron;te heslo
+          input#updatePassword.button-1.button-1-colors(type='submit' value='Uložit')
+  
+
+// ========== MAIN JS ========== //
+script(src='/js/myProfile.js')
+script(src='/js/commonLoggedIn.js')
