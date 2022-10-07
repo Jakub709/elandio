@@ -320,6 +320,10 @@
   line-height: 1.8;
 }
 
+.link {
+  font-weight: 600;
+  text-decoration: none;
+}
 /**************************/
 /* FOOTER */
 /**************************/

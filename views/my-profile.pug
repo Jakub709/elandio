@@ -19,7 +19,7 @@ head
 // ========== HEADER ========== //
 header.header
   .header__container
-    img.header__img(src='images/ilandio_logo.png' alt='')
+    img.header__img(src='images/elandio_logo.png' alt='')
     p.header__logo M&uring;j profil
     p.header__logo__second
       i &bdquo;J&aacute; u&ccaron;&iacute;m tebe, jiný učí mě.
@@ -29,7 +29,7 @@ header.header
 #navbar.nav
   nav.nav__container
     div
-      a.nav__link.nav__logo(href='https://www.facebook.com/ilandio/' target='_blank')
+      a.nav__link.nav__logo(href='https://www.facebook.com/elandio/' target='_blank')
         i.bx.bxs-disc.nav__icon
         span.nav__logo-name Novinky
       .nav__list
@@ -104,21 +104,21 @@ main
                     input#linkedin.input-field(type='text' name='linkedin' placeholder='')
                     label(for='linkedin') LinkedIn Resource ID
                   .form-item
-                    input#github.input-field(type='text' name='github' placeholder='')
-                    label(for='github') GitHub Username
-                p.heading-input Pracovn&iacute; &uacute;daje
+                    input#instagram.input-field(type='text' name='instagram' placeholder='')
+                    label(for='instagram') Instagram Username
+                p.heading-input Studijní údaje
                 .grid.grid-row-gap.grid--3-cols
                   .form-item
-                    input#job.input-field(type='text' list='categoryList' name='job' placeholder='')
+                    input#faculty.input-field(type='text' list='categoryList' name='faculty' placeholder='')
                     datalist#categoryList
                       //- option(value='GreenFoxAcademy')
-                      option(value='iLandio')
+                      option(value='eLandio')
                       option(value='MUNI')
                       //- option(value='StartupJobs')
-                    label(for='job') Kde pracuji
+                    label(for='faculty') Fakulta
                   .form-item
-                    input#position.input-field(type='text' name='position' placeholder='')
-                    label(for='position') Pracovn&iacute; pozice
+                    input#fieldOfStudy.input-field(type='text' name='fieldOfStudy' placeholder='')
+                    label(for='fieldOfStudy') Studijní obor
                   .form-item
                     input#region.input-field(list='regionList' name='region' placeholder='')
                     datalist#regionList

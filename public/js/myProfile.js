@@ -27,9 +27,9 @@ const locationLatitude = document.getElementById("locationLatitude");
 const locationLongitude = document.getElementById("locationLongitude");
 const facebook = document.getElementById("facebook");
 const linkedin = document.getElementById("linkedin");
-const github = document.getElementById("github");
-const job = document.getElementById("job");
-const position = document.getElementById("position");
+const instagram = document.getElementById("instagram");
+const faculty = document.getElementById("faculty");
+const fieldOfStudy = document.getElementById("fieldOfStudy");
 const region = document.getElementById("region");
 const hex = document.getElementById("hex");
 const pfoto = document.querySelector(".avatar");
@@ -44,9 +44,9 @@ document.addEventListener("DOMContentLoaded", function (event) {
     locationLongitude.value = getData.userLoggedIn.locationLongitude;
     facebook.value = getData.userLoggedIn.facebook;
     linkedin.value = getData.userLoggedIn.linkedin;
-    github.value = getData.userLoggedIn.github;
-    job.value = getData.userLoggedIn.job;
-    position.value = getData.userLoggedIn.position;
+    instagram.value = getData.userLoggedIn.instagram;
+    faculty.value = getData.userLoggedIn.faculty;
+    fieldOfStudy.value = getData.userLoggedIn.fieldOfStudy;
     region.value = getData.userLoggedIn.region;
     hex.value = getData.userLoggedIn.hex;
     pfoto.src = getData.userLoggedIn.profilePic;
@@ -62,9 +62,9 @@ updateMain.addEventListener("click", function (e) {
     email: email.value,
     facebook: facebook.value,
     linkedin: linkedin.value,
-    github: github.value,
-    job: job.value,
-    position: position.value,
+    instagram: instagram.value,
+    faculty: faculty.value,
+    fieldOfStudy: fieldOfStudy.value,
     region: region.value,
     hex: hex.value,
   };
@@ -76,9 +76,9 @@ updateMain.addEventListener("click", function (e) {
       email.value = postData.userLoggedIn.email;
       facebook.value = postData.userLoggedIn.facebook;
       linkedin.value = postData.userLoggedIn.linkedin;
-      github.value = postData.userLoggedIn.github;
-      job.value = postData.userLoggedIn.job;
-      position.value = postData.userLoggedIn.position;
+      instagram.value = postData.userLoggedIn.instagram;
+      faculty.value = postData.userLoggedIn.faculty;
+      fieldOfStudy.value = postData.userLoggedIn.fieldOfStudy;
       region.value = postData.userLoggedIn.region;
       hex.value = postData.userLoggedIn.hex;
 

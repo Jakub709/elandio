@@ -24,22 +24,22 @@ router.post("/", async (req, res, next) => {
       //console.log(user._id);
       const emailCode = user.password;
       //console.log(emailCode);
-      const emailText = `<b>iLandio Ti posílá odkaz pro změnu hesla!</b> <br><br> Stačí kliknout na tento <a href=https://ilandio.cz/reset-pass> odkaz</a> a použít následující kód:<br> <span style="background-color:#EFF1F7;">${emailCode}</span> <br><br>Krásný den přeje <br> <b>Jakub</b>`;
+      const emailText = `<b>eLandio Ti posílá odkaz pro změnu hesla!</b> <br><br> Stačí kliknout na tento <a href=https://elandio.cz/reset-pass> odkaz</a> a použít následující kód:<br> <span style="background-color:#EFF1F7;">${emailCode}</span> <br><br>Krásný den přeje <br> <b>Jakub</b>`;
 
       // Nodemailer - odeslání emailu
       require("dotenv").config();
       const transporter = nodemailer.createTransport({
         host: "smtp.seznam.cz",
         auth: {
-          user: "info@ilandio.cz",
+          user: "info@elandio.cz",
           pass: process.env.PASSWORD,
         },
       });
 
       const mailOptions = {
-        from: "info@ilandio.cz",
+        from: "info@elandio.cz",
         to: email,
-        subject: "iLandio | Změna hesla",
+        subject: "eLandio | Změna hesla",
         html: emailText,
       };
 

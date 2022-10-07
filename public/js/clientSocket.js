@@ -1,6 +1,6 @@
 var connected = false;
 
-let socketUrl = "https://ilandio.herokuapp.com"; // ADD YOUR HOSTED URL HERE
+let socketUrl = "https://elandio.cz"; // ADD YOUR HOSTED URL HERE
 if (location.hostname === "localhost" || location.hostname === "127.0.0.1") {
   // If in localhost, use this url
   socketUrl = "http://localhost:3333";

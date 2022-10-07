@@ -241,11 +241,11 @@
 .social-button--linkedin::after {
   background: #d1cfd3;
 }
-.social-button--github {
+.social-button--instagram {
   color: #d1cfd3;
   fill: #374a69;
 }
-.social-button--github::after {
+.social-button--instagram::after {
   background: #d1cfd3;
 }
 

@@ -69,7 +69,7 @@ function createUserHtml(userData) {
                 <div class='userDetailsContainer'>
                     <div class='header'>
                         <span>${userData.name}</span>
-                        <span class='username'><b>@${userData.job}</b></span>
+                        <span class='username'><b>@${userData.faculty}</b></span>
                     </div>
                 </div>
             </div>`;

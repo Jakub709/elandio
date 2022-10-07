@@ -15,23 +15,23 @@ router.post("/", async (req, res) => {
     const email = req.body.email;
     const facebook = req.body.facebook;
     const linkedin = req.body.linkedin;
-    const github = req.body.github;
-    const job = req.body.job;
-    const position = req.body.position;
+    const instagram = req.body.instagram;
+    const faculty = req.body.faculty;
+    const fieldOfStudy = req.body.fieldOfStudy;
     const region = req.body.region;
     const hex = req.body.hex;
 
     // Ochrana před nepovoleným emailem
-    // const emailDomena = email.split("@").pop();
-    // const seznamDomen = [
-    //   "seznam.cz",
-    //   "mail.muni.cz",
-    //   "gmail.com",
-    //   "ilandio.cz",
-    // ];
-    // if (!seznamDomen.includes(emailDomena)) {
-    //   email = req.session.user.email;
-    // }
+    const emailDomena = email.split("@").pop();
+    const seznamDomen = [
+      "seznam.cz",
+      "mail.muni.cz",
+      "gmail.com",
+      "elandio.cz",
+    ];
+    if (!seznamDomen.includes(emailDomena)) {
+      email = req.session.user.email;
+    }
 
     const updatedUser = await User.findByIdAndUpdate(
       req.session.user._id,
@@ -40,9 +40,9 @@ router.post("/", async (req, res) => {
         email: email || req.session.user.email,
         facebook: facebook || req.session.user.facebook,
         linkedin: linkedin || req.session.user.linkedin,
-        github: github || req.session.user.github,
-        job: job || req.session.user.job,
-        position: position || req.session.user.position,
+        instagram: instagram || req.session.user.instagram,
+        faculty: faculty || req.session.user.faculty,
+        fieldOfStudy: fieldOfStudy || req.session.user.fieldOfStudy,
         region: region || req.session.user.region,
         hex: hex || req.session.user.hex,
       },

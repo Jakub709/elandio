@@ -350,11 +350,11 @@ a.createbtn i {
 .social-button--linkedin::after {
   background: #d1cfd3;
 }
-.social-button--github {
+.social-button--instagram {
   color: #d1cfd3;
   fill: var(--main-color);
 }
-.social-button--github::after {
+.social-button--instagram::after {
   background: #d1cfd3;
 }
 

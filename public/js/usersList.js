@@ -40,7 +40,7 @@ window.addEventListener("click", function (event) {
 // Modal filter search
 const submitButton = document.querySelector(".button-1");
 
-const ilandio = document.getElementById("ilandio");
+const elandio = document.getElementById("elandio");
 const greenFoxAcademy = document.getElementById("greenFoxAcademy");
 const startupJobs = document.getElementById("startupJobs");
 const muni = document.getElementById("muni");
@@ -66,8 +66,8 @@ let filterString = "";
 
 submitButton.addEventListener("click", function (e) {
   e.preventDefault();
-  if (ilandio.checked) {
-    filterString += `&job=iLandio`;
+  if (elandio.checked) {
+    filterString += `&job=eLandio`;
   }
   // if (greenFoxAcademy.checked) {
   //   filterString += `&job=GreenFoxAcademy`;
