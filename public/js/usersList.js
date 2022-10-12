@@ -40,10 +40,21 @@ window.addEventListener("click", function (event) {
 // Modal filter search
 const submitButton = document.querySelector(".button-1");
 
-const elandio = document.getElementById("elandio");
-const greenFoxAcademy = document.getElementById("greenFoxAcademy");
-const startupJobs = document.getElementById("startupJobs");
-const muni = document.getElementById("muni");
+const esfMU = document.getElementById("esfMU");
+const fafMU = document.getElementById("fafMU");
+const ffMU = document.getElementById("ffMU");
+const fiMU = document.getElementById("fiMU");
+const fspsMU = document.getElementById("fspsMU");
+const fssMU = document.getElementById("fssMU");
+const lfMU = document.getElementById("lfMU");
+const pdfMU = document.getElementById("pdfMU");
+const prfMU = document.getElementById("prfMU");
+const prirodaMU = document.getElementById("prirodaMU");
+const afMENDELU = document.getElementById("afMENDELU");
+const frmsMENDELU = document.getElementById("frmsMENDELU");
+const ldfMENDELU = document.getElementById("ldfMENDELU");
+const pefMENDELU = document.getElementById("pefMENDELU");
+const zfMENDELU = document.getElementById("zfMENDELU");
 
 const pardubickyKraj = document.getElementById("pardubickyKraj");
 const kralovehradeckyKraj = document.getElementById("kralovehradeckyKraj");
@@ -66,17 +77,50 @@ let filterString = "";
 
 submitButton.addEventListener("click", function (e) {
   e.preventDefault();
-  if (elandio.checked) {
-    filterString += `&job=eLandio`;
+  if (esfMU.checked) {
+    filterString += `&faculty=ESF MU`;
   }
-  // if (greenFoxAcademy.checked) {
-  //   filterString += `&job=GreenFoxAcademy`;
-  // }
-  // if (startupJobs.checked) {
-  //   filterString += `&job=StartupJobs`;
-  // }
-  if (muni.checked) {
-    filterString += `&job=MUNI`;
+  if (fafMU.checked) {
+    filterString += `&faculty=FaF MU`;
+  }
+  if (ffMU.checked) {
+    filterString += `&faculty=FF MU`;
+  }
+  if (fiMU.checked) {
+    filterString += `&faculty=FI MU`;
+  }
+  if (fspsMU.checked) {
+    filterString += `&faculty=FSpS MU`;
+  }
+  if (fssMU.checked) {
+    filterString += `&faculty=FSS MU`;
+  }
+  if (lfMU.checked) {
+    filterString += `&faculty=LF MU`;
+  }
+  if (pdfMU.checked) {
+    filterString += `&faculty=PdF MU`;
+  }
+  if (prfMU.checked) {
+    filterString += `&faculty=PrF MU`;
+  }
+  if (prirodaMU.checked) {
+    filterString += `&faculty=PřF MU`;
+  }
+  if (afMENDELU.checked) {
+    filterString += `&faculty=AF MENDELU`;
+  }
+  if (frmsMENDELU.checked) {
+    filterString += `&faculty=FRMS MENDELU`;
+  }
+  if (ldfMENDELU.checked) {
+    filterString += `&faculty=LDF MENDELU`;
+  }
+  if (pefMENDELU.checked) {
+    filterString += `&faculty=PEF MENDELU`;
+  }
+  if (zfMENDELU.checked) {
+    filterString += `&faculty=ZF MENDELU`;
   }
   if (pardubickyKraj.checked) {
     filterString += `&region=Pardubický kraj`;

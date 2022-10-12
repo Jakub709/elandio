@@ -4,35 +4,38 @@ const nabidka = document.getElementById("nabidka");
 const poptavka = document.getElementById("poptavka");
 
 // Kategorie
-const javaScript = document.getElementById("javaScript");
-const reactVueAngular = document.getElementById("reactVueAngular");
-const node = document.getElementById("node");
-const typescript = document.getElementById("typescript");
-const python = document.getElementById("python");
-const htmlcss = document.getElementById("htmlcss");
-const java = document.getElementById("java");
-const databaze = document.getElementById("databaze");
-const csharp = document.getElementById("csharp");
-const cplusplus = document.getElementById("cplusplus");
-const php = document.getElementById("php");
-const swiftKotlinDart = document.getElementById("swift/kotlin/dart");
+const pravo = document.getElementById("pravo");
+const lekarstvi = document.getElementById("lekarstvi");
+const geografie = document.getElementById("geografie");
+const geologie = document.getElementById("geologie");
+const biologie = document.getElementById("biologie");
+const chemie = document.getElementById("chemie");
+const fyzika = document.getElementById("fyzika");
+const matematika = document.getElementById("matematika");
 const statistika = document.getElementById("statistika");
-const r = document.getElementById("r");
-const matlab = document.getElementById("matlab");
-const tableauPowerBI = document.getElementById("tableau/powerbi");
-const vba = document.getElementById("vba");
-const ruby = document.getElementById("ruby");
-const devOps = document.getElementById("devOps");
-const go = document.getElementById("go");
-const testovani = document.getElementById("testovani");
+const historie = document.getElementById("historie");
 const anglictina = document.getElementById("anglictina");
-const softSkills = document.getElementById("softSkills");
+const nemcina = document.getElementById("nemcina");
+const spanelstina = document.getElementById("spanelstina");
+const ostatniJazyky = document.getElementById("ostatniJazyky");
+const farmacie = document.getElementById("farmacie");
+const ekonomie = document.getElementById("ekonomie");
+const informatika = document.getElementById("informatika");
+const psychologie = document.getElementById("psychologie");
+const sociologie = document.getElementById("sociologie");
+const mezinarodniVztahy = document.getElementById("mezinarodniVztahy");
+const sport = document.getElementById("sport");
+const hudba = document.getElementById("hudba");
+const agronomie = document.getElementById("agronomie");
+const lesnictvi = document.getElementById("lesnictvi");
+const veterinarstvi = document.getElementById("veterinarstvi");
+const zabava = document.getElementById("zabava");
 const ostatni = document.getElementById("ostatni");
 
 // Level
-const junior = document.getElementById("junior");
-const medior = document.getElementById("medior");
-const senior = document.getElementById("senior");
+const bakalar = document.getElementById("bakalar");
+const magistr = document.getElementById("magistr");
+const akademik = document.getElementById("akademik");
 
 // Group
 const individualne = document.getElementById("individualne");
@@ -59,86 +62,92 @@ submitButton.addEventListener("click", function (e) {
   if (poptavka.checked) {
     filterString += `&type=poptávka`;
   }
-  if (javaScript.checked) {
-    filterString += `&category=javascript`;
+  if (pravo.checked) {
+    filterString += `&category=právo`;
   }
-  if (reactVueAngular.checked) {
-    filterString += `&category=react/vue/anglular`;
+  if (lekarstvi.checked) {
+    filterString += `&category=lékařství`;
   }
-  if (node.checked) {
-    filterString += `&category=node`;
+  if (geografie.checked) {
+    filterString += `&category=geografie`;
   }
-  if (typescript.checked) {
-    filterString += `&category=typescript`;
+  if (geologie.checked) {
+    filterString += `&category=geologie`;
   }
-  if (python.checked) {
-    filterString += `&category=python`;
+  if (chemie.checked) {
+    filterString += `&category=chemie`;
   }
-  if (htmlcss.checked) {
-    filterString += `&category=html/css`;
+  if (fyzika.checked) {
+    filterString += `&category=fyzika`;
   }
-  if (java.checked) {
-    filterString += `&category=java`;
-  }
-  if (databaze.checked) {
-    filterString += `&category=databáze`;
-  }
-  if (csharp.checked) {
-    filterString += `&category=csharp`;
-  }
-  if (cplusplus.checked) {
-    filterString += `&category=cplusplus`;
-  }
-  if (php.checked) {
-    filterString += `&category=php`;
-  }
-  if (swiftKotlinDart.checked) {
-    filterString += `&category=swift/kotlin/dart`;
+  if (matematika.checked) {
+    filterString += `&category=matematika`;
   }
   if (statistika.checked) {
     filterString += `&category=statistika`;
   }
-  if (r.checked) {
-    filterString += `&category=r`;
-  }
-  if (matlab.checked) {
-    filterString += `&category=matlab`;
-  }
-  if (tableauPowerBI.checked) {
-    filterString += `&category=tableau/powerbi`;
-  }
-  if (vba.checked) {
-    filterString += `&category=vba`;
-  }
-  if (ruby.checked) {
-    filterString += `&category=ruby`;
-  }
-  if (devOps.checked) {
-    filterString += `&category=devops`;
-  }
-  if (go.checked) {
-    filterString += `&category=go`;
-  }
-  if (testovani.checked) {
-    filterString += `&category=testovaní`;
+  if (historie.checked) {
+    filterString += `&category=historie`;
   }
   if (anglictina.checked) {
-    filterString += `&category=anglictina`;
+    filterString += `&category=angličtina`;
   }
-  if (softSkills.checked) {
-    filterString += `&category=softskills`;
+  if (nemcina.checked) {
+    filterString += `&category=němčina`;
+  }
+  if (spanelstina.checked) {
+    filterString += `&category=španělština`;
+  }
+  if (ostatniJazyky.checked) {
+    filterString += `&category=ostatní-jazyky`;
+  }
+  if (farmacie.checked) {
+    filterString += `&category=farmacie`;
+  }
+  if (ekonomie.checked) {
+    filterString += `&category=ekonomie`;
+  }
+  if (informatika.checked) {
+    filterString += `&category=informatika`;
+  }
+  if (psychologie.checked) {
+    filterString += `&category=psychologie`;
+  }
+  if (sociologie.checked) {
+    filterString += `&category=sociologie`;
+  }
+  if (mezinarodniVztahy.checked) {
+    filterString += `&category=mezinárodní-vztahy`;
+  }
+  if (sport.checked) {
+    filterString += `&category=sport`;
+  }
+  if (hudba.checked) {
+    filterString += `&category=hudba`;
+  }
+  if (agronomie.checked) {
+    filterString += `&category=agronomie`;
+  }
+  if (lesnictvi.checked) {
+    filterString += `&category=lesnictví`;
+  }
+  if (veterinarstvi.checked) {
+    filterString += `&category=veterinářství`;
+  }
+  if (zabava.checked) {
+    filterString += `&category=zábava`;
   }
   if (ostatni.checked) {
     filterString += `&category=ostatní`;
   }
-  if (junior.checked) {
-    filterString += `&level=junior`;
+  if (bakalar.checked) {
+    filterString += `&level=bakalář`;
   }
-  if (medior.checked) {
-    filterString += `&level=medior`;
+  if (magistr.checked) {
+    filterString += `&level=magistr`;
   }
-  if (senior.checked) {
-    filterString += `&level=senior`;
+  if (akademik.checked) {
+    filterString += `&level=akademik`;
   }
   if (individualne.checked) {
     filterString += `&group=individuálně`;
