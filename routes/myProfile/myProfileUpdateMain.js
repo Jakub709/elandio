@@ -23,12 +23,7 @@ router.post("/", async (req, res) => {
 
     // Ochrana před nepovoleným emailem
     const emailDomena = email.split("@").pop();
-    const seznamDomen = [
-      "seznam.cz",
-      "mail.muni.cz",
-      "gmail.com",
-      "elandio.cz",
-    ];
+    const seznamDomen = ["mail.muni.cz", "ilandio.cz", "elandio.cz"];
     if (!seznamDomen.includes(emailDomena)) {
       email = req.session.user.email;
     }

@@ -29,15 +29,15 @@ router.post("/", async (req, res, next) => {
       // Nodemailer - odeslání emailu
       require("dotenv").config();
       const transporter = nodemailer.createTransport({
-        host: "smtp.seznam.cz",
+        service: "gmail",
         auth: {
-          user: "info@elandio.cz",
-          pass: process.env.PASSWORD,
+          user: "solnickajakub@gmail.com",
+          pass: process.env.PASSWORDGMAIL,
         },
       });
 
       const mailOptions = {
-        from: "info@elandio.cz",
+        from: "solnickajakub@gmail.com",
         to: email,
         subject: "eLandio | Změna hesla",
         html: emailText,

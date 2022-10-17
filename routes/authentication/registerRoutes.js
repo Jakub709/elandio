@@ -26,12 +26,7 @@ router.post("/", async (req, res, next) => {
     const username = req.body.username.trim();
     const email = req.body.email.trim();
     const emailDomena = email.split("@").pop();
-    const seznamDomen = [
-      "seznam.cz",
-      "mail.muni.cz",
-      "gmail.com",
-      "elandio.cz",
-    ];
+    const seznamDomen = ["mail.muni.cz", "ilandio.cz", "elandio.cz"];
     const password = req.body.password;
     const passwordConf = req.body.passwordConf;
     const passwordLength = password.length;
@@ -148,15 +143,15 @@ router.post("/", async (req, res, next) => {
 
             require("dotenv").config();
             const transporter = nodemailer.createTransport({
-              host: "smtp.seznam.cz",
+              service: "gmail",
               auth: {
-                user: "info@elandio.cz",
-                pass: process.env.PASSWORD,
+                user: "solnickajakub@gmail.com",
+                pass: process.env.PASSWORDGMAIL,
               },
             });
 
             const mailOptions = {
-              from: "info@elandio.cz",
+              from: "solnickajakub@gmail.com",
               to: email,
               subject: "Vítej v eLandiu ",
               html: emailText,

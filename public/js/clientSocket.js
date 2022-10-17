@@ -3,7 +3,7 @@ var connected = false;
 let socketUrl = "https://elandio.cz"; // ADD YOUR HOSTED URL HERE
 if (location.hostname === "localhost" || location.hostname === "127.0.0.1") {
   // If in localhost, use this url
-  socketUrl = "http://localhost:3333";
+  socketUrl = "http://localhost:3000";
 }
 var socket = io(socketUrl);
 
