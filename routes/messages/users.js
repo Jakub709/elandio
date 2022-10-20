@@ -18,7 +18,7 @@ router.get("/", async (req, res, next) => {
     searchObj = {
       $or: [
         { name: { $regex: req.query.search, $options: "i" } },
-        { job: { $regex: req.query.search, $options: "i" } },
+        { email: { $regex: req.query.search, $options: "i" } },
         { username: { $regex: req.query.search, $options: "i" } },
       ],
     };

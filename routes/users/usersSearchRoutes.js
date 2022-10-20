@@ -16,7 +16,8 @@ router.get("/", async (req, res) => {
         $or: [
           { name: { $regex: req.query.search, $options: "i" } },
           { region: { $regex: req.query.search, $options: "i" } },
-          { job: { $regex: req.query.search, $options: "i" } },
+          { faculty: { $regex: req.query.search, $options: "i" } },
+          { fieldOfStudy: { $regex: req.query.search, $options: "i" } },
         ],
       };
     }
