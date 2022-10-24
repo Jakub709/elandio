@@ -173,16 +173,16 @@ router.post("/", async (req, res, next) => {
             const emailTextAdmin = `<b>V eLandiu je nový uživatel :-)</b> <br><br> Jméno a Příjmení: ${nameUser} <br>Profil: <a href=https://elandio.cz/user-profile/${idUser}>${idUser}</a>  <br>Email: ${emailUser}<br>Aktivace účtu: <a href=https://elandio.cz/account-confirmed/${idUser}>aktivovat</a> <br><br>Měj krásný den, <br> <b>Jakube :-)</b>`;
 
             const transporterAdmin = nodemailer.createTransport({
-              host: "smtp.seznam.cz",
+              service: "gmail",
               auth: {
-                user: "info@elandio.cz",
-                pass: process.env.PASSWORD,
+                user: "solnickajakub@gmail.com",
+                pass: process.env.PASSWORDGMAIL,
               },
             });
 
             const mailOptionsAdmin = {
-              from: "info@elandio.cz",
-              to: "uctyelandio@seznam.cz",
+              from: "solnickajakub@gmail.com",
+              to: "solnickajakub@gmail.com",
               subject: "Hurá, nový uživatel :-)",
               html: emailTextAdmin,
             };

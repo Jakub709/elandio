@@ -206,7 +206,7 @@ function getLatestMessage(latestMessage) {
     return `${sender.name}: ${latestMessage.content}`;
   }
 
-  return "New chat";
+  return "Nový chat";
 }
 
 function getChatImageElements(chatData) {

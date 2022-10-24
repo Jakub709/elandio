@@ -50,11 +50,7 @@ const lfMU = document.getElementById("lfMU");
 const pdfMU = document.getElementById("pdfMU");
 const prfMU = document.getElementById("prfMU");
 const prirodaMU = document.getElementById("prirodaMU");
-const afMENDELU = document.getElementById("afMENDELU");
-const frmsMENDELU = document.getElementById("frmsMENDELU");
-const ldfMENDELU = document.getElementById("ldfMENDELU");
-const pefMENDELU = document.getElementById("pefMENDELU");
-const zfMENDELU = document.getElementById("zfMENDELU");
+
 
 const pardubickyKraj = document.getElementById("pardubickyKraj");
 const kralovehradeckyKraj = document.getElementById("kralovehradeckyKraj");
@@ -106,21 +102,6 @@ submitButton.addEventListener("click", function (e) {
   }
   if (prirodaMU.checked) {
     filterString += `&faculty=PřF MU`;
-  }
-  if (afMENDELU.checked) {
-    filterString += `&faculty=AF MENDELU`;
-  }
-  if (frmsMENDELU.checked) {
-    filterString += `&faculty=FRMS MENDELU`;
-  }
-  if (ldfMENDELU.checked) {
-    filterString += `&faculty=LDF MENDELU`;
-  }
-  if (pefMENDELU.checked) {
-    filterString += `&faculty=PEF MENDELU`;
-  }
-  if (zfMENDELU.checked) {
-    filterString += `&faculty=ZF MENDELU`;
   }
   if (pardubickyKraj.checked) {
     filterString += `&region=Pardubický kraj`;

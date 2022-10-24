@@ -188,6 +188,11 @@ searchBtn.addEventListener("click", function (e) {
   window.location.href = `/posts-search?search=${inputSearch.value}`;
 });
 
+// Message
+const confirmPopUp = function (link) {
+  window.location.href = link;
+};
+
 // Modal Filter
 // Get the modal
 const modal = document.getElementById("myModal");

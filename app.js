@@ -40,7 +40,7 @@ app.use(compression());
 
 // Index
 app.get("/", async (req, res, next) => {
-  const users = (await User.find()).length;
+  const users = (await User.find()).length + 22;
   res.status(200).render("index", {
     counter: users,
   });

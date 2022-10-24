@@ -145,6 +145,31 @@
   margin: 1rem 0 0 0;
 }
 
+.my-post-message {
+  text-align: center;
+  font-size: 1rem;
+  margin: 0;
+}
+
+.my-post-message a {
+  text-decoration: none;
+  /* background-color: #ea4335; */
+  color: #374a69;
+  padding: 10px 10px;
+  border-radius: 0.25rem;
+  letter-spacing: 0.05em;
+  position: absolute;
+  right: 0;
+  top: 10%;
+
+  /* In relation to ELEMENT ITSELF */
+  transform: translate(-50%, -50%);
+}
+
+.my-post-message a:hover {
+  background-color: #eff1f7;
+}
+
 .no-results {
   margin-top: 2rem;
   text-align: center;
@@ -165,6 +190,7 @@
   margin-top: 1rem;
   font-weight: 600;
 }
+
 /**************************/
 /* MODAL FILTR*/
 /**************************/
