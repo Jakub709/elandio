@@ -209,8 +209,7 @@ router.post("/", async (req, res, next) => {
           res.status(200).render("register", payload);
         }
       } else {
-        payload.errorMessage =
-          "⚠ Uveď prosím email školy, která je do eLandia zapojena.";
+        payload.errorMessage = "⚠ Uveď prosím svůj školní email.";
         res.status(200).render("register", payload);
       }
     } else {

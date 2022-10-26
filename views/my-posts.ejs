@@ -290,9 +290,7 @@
                 </div>
               </div>
               <div class="my-post-delete">
-                <a onclick="confirmPopUp(`/post-delete/<%=post.postedByID%>`)"
-                  >🗑️</a
-                >
+                <a onclick="confirmPopUp(`/post-delete/<%= post._id% >`)">🗑️</a>
               </div>
             </div>
             <% }); %>
