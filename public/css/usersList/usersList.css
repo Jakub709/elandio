@@ -124,6 +124,9 @@
   text-transform: uppercase;
   text-align: center;
   font-weight: 500;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .tag-one {
@@ -572,10 +575,6 @@
   body {
     padding: 1rem 0.5rem 1rem 4.8rem;
   }
-
-  .social-buttons {
-    justify-content: center;
-  }
 }
 
 @media (max-width: 768px) {
@@ -591,6 +590,10 @@
 
   .my-post {
     padding: 1.6rem 0.6rem;
+  }
+
+  .social-buttons {
+    justify-content: center;
   }
 
   .grid--2-cols-post {

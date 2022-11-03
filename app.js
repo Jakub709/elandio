@@ -24,6 +24,12 @@ const io = require("socket.io")(server, { pingTimeout: 60000 });
 app.set("view engine", "ejs");
 app.set("views", "views");
 
+// Admin page Bro
+// const adminRoutes = require("./routes/admin/adminRoutes");
+// app.use("/admin", adminRoutes);
+
+// app.use(express.json()) zde mám kvůli adminu
+app.use(express.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(express.static(path.join(__dirname, "public")));
 
@@ -45,6 +51,10 @@ app.get("/", async (req, res, next) => {
     counter: users,
   });
 });
+
+// Admin
+const adminRoutes = require("./routes/admin/adminRoutes");
+app.use("/admin-secret-page", adminRoutes);
 
 // Error
 app.get("/error", async (req, res, next) => {

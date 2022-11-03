@@ -5,6 +5,8 @@ const bodyParser = require("body-parser");
 const User = require("../../schemas/UserSchema");
 const dotenv = require("dotenv");
 
+// app.use(express.json()) zde mám kvůli adminu
+app.use(express.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 
 router.get("/:id", async (req, res, next) => {

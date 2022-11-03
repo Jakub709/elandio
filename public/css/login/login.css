@@ -412,3 +412,10 @@ input::placeholder {
   color: white;
   text-decoration: none;
 }
+
+.link {
+  font-size: 1.9rem !important;
+  font-weight: 600 !important;
+  text-decoration: none !important;
+  color: #0066cc !important;
+}

@@ -5,6 +5,8 @@ const bodyParser = require("body-parser");
 const Post = require("../../schemas/PostSchema");
 const APIFeatures = require("../../utils/apiFeatures");
 
+// app.use(express.json()) zde mám kvůli adminu
+app.use(express.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 
 router.get("/", async (req, res) => {

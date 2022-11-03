@@ -9,6 +9,8 @@ const upload = multer({ dest: "uploads/" });
 const User = require("../../schemas/UserSchema");
 const AWS = require("aws-sdk");
 
+// app.use(express.json()) zde mám kvůli adminu
+app.use(express.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 
 router.get("/", async (req, res, next) => {
