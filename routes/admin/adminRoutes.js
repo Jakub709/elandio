@@ -20,7 +20,7 @@ router.get("/", async (req, res, next) => {
   });
 });
 
-cron.schedule("*/5 * * * *", async () => {
+cron.schedule("00 00 * * *", async () => {
   console.log("Running a task every midnight (1:00 am)");
   const usersCounter = (await User.find()).length;
   const postsCounter = (await Post.find()).length;
