@@ -101,6 +101,10 @@
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }
 
+.my-profile-picture {
+  width: 75%;
+}
+
 .nav-profile {
   width: 100%;
   z-index: -1;
@@ -209,8 +213,8 @@ textarea {
 
 .avatar {
   border-radius: 0.25rem;
-  height: 192px;
-  width: 192px;
+  height: 222px;
+  width: 222px;
 }
 
 .modal {
@@ -307,6 +311,10 @@ textarea {
 @media (max-width: 1000px) {
   .header__logo {
     font-size: var(--normal--font-size);
+  }
+
+  .my-profile-picture {
+    display: none;
   }
 
   .grid--2-cols {

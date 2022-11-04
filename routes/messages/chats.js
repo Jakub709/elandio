@@ -6,8 +6,6 @@ const User = require("../../schemas/UserSchema");
 const Chat = require("../../schemas/ChatSchema");
 const Message = require("../../schemas/MessageSchema");
 
-// app.use(express.json()) zde mám kvůli adminu
-app.use(express.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 
 router.post("/", async (req, res, next) => {

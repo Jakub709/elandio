@@ -6,8 +6,6 @@ const Post = require("../../schemas/PostSchema");
 const User = require("../../schemas/UserSchema");
 const APIFeatures = require("../../utils/apiFeatures");
 
-// app.use(express.json()) zde mám kvůli adminu
-app.use(express.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 
 router.get("/", async (req, res) => {

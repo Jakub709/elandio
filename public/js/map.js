@@ -5,7 +5,8 @@ if (navigator.geolocation)
     const map = L.map("map").setView([latitude, longitude], 13);
     mapLink = '<a href="http://openstreetmap.org">OpenStreetMap</a>';
     L.tileLayer("http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
-      attribution: "&copy; " + mapLink + " Contributors",
+      attribution:
+        'Vytvořte si vlastní pin! Přejděte na <a href="/my-profile">Můj profil -> Editovat profil -> O mně</a>',
       maxZoom: 18,
     }).addTo(map);
     console.log("nazdar");

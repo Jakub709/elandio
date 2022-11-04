@@ -41,3 +41,8 @@
 .leaflet-popup .leaflet-popup-tip {
   background-color: var(--color-dark--map);
 }
+
+.leaflet-container .leaflet-control-attribution {
+  font-size: 0.8rem;
+  font-weight: 600;
+}

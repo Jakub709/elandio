@@ -5,8 +5,6 @@ const bodyParser = require("body-parser");
 const bcrypt = require("bcrypt");
 const User = require("../../schemas/UserSchema");
 
-// app.use(express.json()) zde mám kvůli adminu
-app.use(express.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 
 // Stránka s přihlášením

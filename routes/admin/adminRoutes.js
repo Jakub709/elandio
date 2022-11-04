@@ -8,8 +8,6 @@ const Post = require("../../schemas/PostSchema");
 
 const cron = require("node-cron");
 
-// app.use(express.json()) zde mám kvůli adminu
-app.use(express.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 
 //const todayDate = new Date().toISOString().substring(0, 10);

@@ -7,8 +7,6 @@ const bcrypt = require("bcrypt");
 const nodemailer = require("nodemailer");
 const dotenv = require("dotenv");
 
-// app.use(express.json()) zde mám kvůli adminu
-app.use(express.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 
 router.get("/", async (req, res, next) => {

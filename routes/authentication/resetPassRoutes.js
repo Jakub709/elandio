@@ -5,8 +5,6 @@ const bodyParser = require("body-parser");
 const User = require("../../schemas/UserSchema");
 const bcrypt = require("bcrypt");
 
-// app.use(express.json()) zde mám kvůli adminu
-app.use(express.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 
 router.get("/", async (req, res, next) => {

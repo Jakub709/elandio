@@ -28,8 +28,7 @@ app.set("views", "views");
 // const adminRoutes = require("./routes/admin/adminRoutes");
 // app.use("/admin", adminRoutes);
 
-// app.use(express.json()) zde mám kvůli adminu
-app.use(express.json());
+
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(express.static(path.join(__dirname, "public")));
 
@@ -46,7 +45,7 @@ app.use(compression());
 
 // Index
 app.get("/", async (req, res, next) => {
-  const users = (await User.find()).length + 22;
+  const users = (await User.find()).length + 5;
   res.status(200).render("index", {
     counter: users,
   });

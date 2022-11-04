@@ -57,6 +57,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
 // Funkce
 updateMain.addEventListener("click", function (e) {
   e.preventDefault();
+
   const data = {
     name: name.value,
     email: email.value,
@@ -70,7 +71,6 @@ updateMain.addEventListener("click", function (e) {
   };
   $.post("/my-profile-update-main", data, (postData, status, xhr) => {
     if (!postData) {
-      return;
     } else {
       name.value = postData.userLoggedIn.name;
       email.value = postData.userLoggedIn.email;
