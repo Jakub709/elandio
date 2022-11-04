@@ -81,81 +81,80 @@ main
           li.user-following(onclick='tabs(2)') Heslo
       .tab
         .my-profile
-          form.inputField
-            div
-              .inputField-data
-                p.heading-input Z&aacute;kladn&iacute; &uacute;daje
-                .grid.grid-row-gap.grid--3-cols
-                  .form-item
-                    input#name.input-field(type='text' name='name' placeholder='')
-                    label(for='name') Jm&eacute;no a p&rcaron;&iacute;jmen&iacute;
-                  .form-item
-                    input#email.input-field(type='text' name='email' placeholder='')
-                    label(for='email') Email
-                  .form-item
-                    input#hex.input-field(type='text' name='hex' placeholder='hex, např. #ffffff')
-                    label(for='hex') Barva pozad&iacute; profilu
-                p.heading-input Soci&aacute;ln&iacute; s&iacute;t&ecaron;
-                .grid.grid-row-gap.grid--3-cols
-                  .form-item
-                    input#facebook.input-field(type='text' name='facebook' placeholder='')
-                    label(for='facebook') Facebook Username
-                  .form-item
-                    input#linkedin.input-field(type='text' name='linkedin' placeholder='')
-                    label(for='linkedin') LinkedIn Resource ID
-                  .form-item
-                    input#instagram.input-field(type='text' name='instagram' placeholder='')
-                    label(for='instagram') Instagram Username
-                p.heading-input Studijní údaje
-                .grid.grid-row-gap.grid--3-cols
-                  .form-item
-                    input#faculty.input-field(type='text' list='categoryList' name='faculty' placeholder='')
-                    datalist#categoryList
-                      //- option(value='GreenFoxAcademy')
-                      option(value='ESF MU')
-                      option(value='FaF MU')
-                      option(value='FF MU')
-                      option(value='FI MU')
-                      option(value='FSpS MU')
-                      option(value='FSS MU')
-                      option(value='LF MU')
-                      option(value='PdF MU')
-                      option(value='PrF MU')
-                      option(value='PřF MU')
-
-                      //- option(value='StartupJobs')
-                    label(for='faculty') Fakulta
-                  .form-item
-                    input#fieldOfStudy.input-field(type='text' name='fieldOfStudy' placeholder='')
-                    label(for='fieldOfStudy') Studijní obor
-                  .form-item
-                    input#region.input-field(list='regionList' name='region' placeholder='')
-                    datalist#regionList
-                      option(value='Brno')
-                      option(value='Ostrava')
-                      option(value='Praha')
-                      option(value='Středočeský kraj')
-                      option(value='Jihočeský kraj')
-                      option(value='Plzeňský kraj')
-                      option(value='Karlovarský kraj')
-                      option(value='Ústecký kraj')
-                      option(value='Liberecký kraj')
-                      option(value='Královehradecký kraj')
-                      option(value='Pardubický kraj')
-                      option(value='Kraj Vysočina')
-                      option(value='Jihomoravský kraj')
-                      option(value='Olomoucký kraj')
-                      option(value='Moravskoslezský kraj')
-                      option(value='Zlínský kraj')
-                    label(for='region') Bydliště
-            input#updateMain.button-1.button-1-colors(type='submit' value='Uložit')
-        .my-profile
-          .my-foto.grid.grid--2-cols
+          .my-foto.grid.grid--two-cols
             .left-side
+              form.inputField
+                div
+                  .inputField-data
+                    p.heading-input Z&aacute;kladn&iacute; &uacute;daje
+                    .grid.grid-row-gap.grid--3-cols
+                      .form-item
+                        input#name.input-field(type='text' name='name' placeholder='')
+                        label(for='name') Jm&eacute;no a p&rcaron;&iacute;jmen&iacute;
+                      .form-item
+                        input#email.input-field(type='text' name='email' placeholder='')
+                        label(for='email') Email
+                      .form-item
+                        input#hex.input-field(type='text' name='hex' placeholder='hex, např. #ffffff')
+                        label(for='hex') Barva pozad&iacute; profilu
+                    p.heading-input Soci&aacute;ln&iacute; s&iacute;t&ecaron;
+                    .grid.grid-row-gap.grid--3-cols
+                      .form-item
+                        input#facebook.input-field(type='text' name='facebook' placeholder='')
+                        label(for='facebook') Facebook Username
+                      .form-item
+                        input#linkedin.input-field(type='text' name='linkedin' placeholder='')
+                        label(for='linkedin') LinkedIn Resource ID
+                      .form-item
+                        input#instagram.input-field(type='text' name='instagram' placeholder='')
+                        label(for='instagram') Instagram Username
+                    p.heading-input Studijní údaje
+                    .grid.grid-row-gap.grid--3-cols
+                      .form-item
+                        input#faculty.input-field(type='text' list='categoryList' name='faculty' placeholder='')
+                        datalist#categoryList
+                          //- option(value='GreenFoxAcademy')
+                          option(value='ESF MU')
+                          option(value='FaF MU')
+                          option(value='FF MU')
+                          option(value='FI MU')
+                          option(value='FSpS MU')
+                          option(value='FSS MU')
+                          option(value='LF MU')
+                          option(value='PdF MU')
+                          option(value='PrF MU')
+                          option(value='PřF MU')
+
+                          //- option(value='StartupJobs')
+                        label(for='faculty') Fakulta
+                      .form-item
+                        input#fieldOfStudy.input-field(type='text' name='fieldOfStudy' placeholder='')
+                        label(for='fieldOfStudy') Studijní obor
+                      .form-item
+                        input#region.input-field(list='regionList' name='region' placeholder='')
+                        datalist#regionList
+                          option(value='Brno')
+                          option(value='Ostrava')
+                          option(value='Praha')
+                          option(value='Středočeský kraj')
+                          option(value='Jihočeský kraj')
+                          option(value='Plzeňský kraj')
+                          option(value='Karlovarský kraj')
+                          option(value='Ústecký kraj')
+                          option(value='Liberecký kraj')
+                          option(value='Královehradecký kraj')
+                          option(value='Pardubický kraj')
+                          option(value='Kraj Vysočina')
+                          option(value='Jihomoravský kraj')
+                          option(value='Olomoucký kraj')
+                          option(value='Moravskoslezský kraj')
+                          option(value='Zlínský kraj')
+                        label(for='region') Bydliště
+                input#updateMain.button-1.button-1-colors(type='submit' value='Uložit')
+            .right-side
               p.heading-input Fotografie
               img.avatar.img-circle.img-thumbnail(src='http://ssl.gstatic.com/accounts/ui/avatar_2x.png' alt='avatar')
               +createImageUploadModal()
-            .right-side
       .my-profile.tab
           form.inputField
             .inputField-data
