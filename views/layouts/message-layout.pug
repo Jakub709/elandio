@@ -30,8 +30,8 @@ header.headerFixedMistakeForSearchUsers
   nav.nav__container
     div
       a.nav__link.nav__logo(href='https://www.facebook.com/groups/3238235073171374' target='_blank')
-        i.bx.bxs-disc.nav__icon
-        span.nav__logo-name Novinky
+        i.bx.bx-world.nav__icon
+        img.header__img(src='images/elandio_logo_sidebar.png' alt='logo')
       .nav__list
         .nav__items
           h3.nav__subtitle Příspěvky
@@ -46,6 +46,9 @@ header.headerFixedMistakeForSearchUsers
           a.nav__link(href='/users-list')
             i.bx.bx-user.nav__icon
             span.nav__name Seznam u&zcaron;ivatel&uring;
+          a.nav__link(href='/users-list-map')
+            i.bx.bx-map.nav__icon
+            span.nav__name Mapa setkání
           .nav__dropdown
             a.nav__link(href='#')
               i.bx.bx-cog.nav__icon
@@ -55,9 +58,6 @@ header.headerFixedMistakeForSearchUsers
               .nav__dropdown-content
                 a.nav__dropdown-item(href='/my-profile') Editovat profil
                 a.nav__dropdown-item(href='/my-profile-watch') Zobrazit profil
-          a.nav__link(href='/users-list-map')
-            i.bx.bx-map.nav__icon
-            span.nav__name Mapa setkání
         .nav__items
           h3.nav__subtitle Služby
           a.nav__link(href='/bank')

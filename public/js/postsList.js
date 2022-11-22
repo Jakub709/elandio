@@ -23,12 +23,12 @@ const ekonomie = document.getElementById("ekonomie");
 const informatika = document.getElementById("informatika");
 const psychologie = document.getElementById("psychologie");
 const sociologie = document.getElementById("sociologie");
-const mezinarodniVztahy = document.getElementById("mezinarodniVztahy");
+const spolecenskeVedy = document.getElementById("spolecenskeVedy");
 const sport = document.getElementById("sport");
 const hudba = document.getElementById("hudba");
-const agronomie = document.getElementById("agronomie");
-const lesnictvi = document.getElementById("lesnictvi");
-const veterinarstvi = document.getElementById("veterinarstvi");
+const filozofie = document.getElementById("filozofie");
+const pedagogika = document.getElementById("pedagogika");
+const cestina = document.getElementById("cestina");
 const zabava = document.getElementById("zabava");
 const ostatni = document.getElementById("ostatni");
 
@@ -98,8 +98,8 @@ submitButton.addEventListener("click", function (e) {
   if (spanelstina.checked) {
     filterString += `&category=španělština`;
   }
-  if (ostatniJazyky.checked) {
-    filterString += `&category=ostatní-jazyky`;
+  if (jazyky.checked) {
+    filterString += `&category=jazyky`;
   }
   if (farmacie.checked) {
     filterString += `&category=farmacie`;
@@ -116,8 +116,8 @@ submitButton.addEventListener("click", function (e) {
   if (sociologie.checked) {
     filterString += `&category=sociologie`;
   }
-  if (mezinarodniVztahy.checked) {
-    filterString += `&category=mezinárodní-vztahy`;
+  if (spolecenskeVedy.checked) {
+    filterString += `&category=společenské-vědy`;
   }
   if (sport.checked) {
     filterString += `&category=sport`;
@@ -125,14 +125,14 @@ submitButton.addEventListener("click", function (e) {
   if (hudba.checked) {
     filterString += `&category=hudba`;
   }
-  if (agronomie.checked) {
-    filterString += `&category=agronomie`;
+  if (filozofie.checked) {
+    filterString += `&category=filozofie`;
   }
-  if (lesnictvi.checked) {
-    filterString += `&category=lesnictví`;
+  if (pedagogika.checked) {
+    filterString += `&category=pedagogika`;
   }
-  if (veterinarstvi.checked) {
-    filterString += `&category=veterinářství`;
+  if (cestina.checked) {
+    filterString += `&category=čeština`;
   }
   if (zabava.checked) {
     filterString += `&category=zábava`;
@@ -219,9 +219,9 @@ window.addEventListener("click", function (event) {
 });
 
 // Go up
-const btnScrollTo = document.getElementById("go-top");
-const here = document.querySelector(".go-up-here");
+// const btnScrollTo = document.getElementById("go-top");
+// const here = document.querySelector(".go-up-here");
 
-btnScrollTo.addEventListener("click", function () {
-  here.scrollIntoView({ behavior: "smooth" });
-});
+// btnScrollTo.addEventListener("click", function () {
+//   here.scrollIntoView({ behavior: "smooth" });
+// });

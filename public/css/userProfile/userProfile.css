@@ -414,15 +414,15 @@ a.createbtn i {
 }
 
 .tag-one {
-  background-color: var(--other-blue);
-  color: #fff;
+  background-color: #efefef;
+  color: #374a69;
 }
 .tag-two {
-  border: 1px solid var(--other-blue);
-  color: var(--other-blue);
+  background-color: #efefef;
+  color: #374a69;
 }
 .tag-three {
-  background-color: #f7bb31;
+  background-color: #1165bf;
   color: #fff;
 }
 

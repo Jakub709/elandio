@@ -10,7 +10,7 @@ app.use(bodyParser.urlencoded({ extended: false }));
 router.get("/", async (req, res) => {
   try {
     // 2) Execute query
-    //const start = Date.now();
+    const start = Date.now();
     // const query = await Post.find();
     // const totalCounter = query.length;
     const features = new APIFeatures(Post.find(), req.query)
@@ -33,8 +33,33 @@ router.get("/", async (req, res) => {
     if (!checkFilter) {
       url = url + "?";
     }
-    // const millis = Date.now() - start;
-    // console.log(millis);
+    const faculty = req.session.user.faculty;
+    let color;
+    if (faculty === "ESF MU") {
+      color = "#C50069";
+    } else if (faculty === "FaF MU") {
+      color = "#527488";
+    } else if (faculty === "FF MU") {
+      color = "#5CB4E1";
+    } else if (faculty === "FI MU") {
+      color = "#F8DA08";
+    } else if (faculty === "FSpS MU") {
+      color = "#74B8AA";
+    } else if (faculty === "FSS MU") {
+      color = "#3D885A";
+    } else if (faculty === "LF MU") {
+      color = "#C62326";
+    } else if (faculty === "PdF MU") {
+      color = "#CE661D";
+    } else if (faculty === "PrF MU") {
+      color = "#8F448E";
+    } else if (faculty === "PřF MU") {
+      color = "#5AA353";
+    } else {
+      color = "#1165BF";
+    }
+    const millis = Date.now() - start;
+    console.log(millis);
     res.status(200).render("posts-list", {
       posts: posts,
       postsCounter: postsCounter,
@@ -42,6 +67,16 @@ router.get("/", async (req, res) => {
       textNext: textNext,
       textPrevious: textPrevious,
       url: url,
+      name: req.session.user.name,
+      about: req.session.user.about,
+      faculty: req.session.user.faculty,
+      fieldOfStudy: req.session.user.fieldOfStudy,
+      myFoto: req.session.user.profilePic,
+      educoins: req.session.user.accountBalance,
+      costs: req.session.user.accountCosts,
+      followers: req.session.user.followersCounter,
+      following: req.session.user.followingCounter,
+      color: color,
     });
   } catch (err) {
     res.status(404).render("error");

@@ -7,14 +7,14 @@
   --nav-width: 219px;
 
   /*========== Colors ==========*/
-  --button-color: #147aed;
+  --button-color: #1165bf;
   --button-color-hover: #3f9cff;
   --main-color: #374a69;
   --body-color: #eff1f7;
   --nav-color: #fff;
-  --nav-color-background: #147aed;
+  --nav-color-background: #1165bf;
   --red: rgb(226, 34, 94);
-  --other-blue: #147aed;
+  --other-blue: #1165bf;
 
   /*========== Font and typography ==========*/
   --body-font: "Poppins", sans-serif;
@@ -82,6 +82,7 @@ img {
   padding: 0 1rem;
   z-index: var(--z-fixed);
   border-bottom: 1px solid #e5e5e5;
+  box-shadow: 0px 10px 20px -10px rgba(0, 0, 0, 0.75);
 }
 
 .header__container {
@@ -147,9 +148,14 @@ img {
   left: -100%;
   height: 100vh;
   padding: 1rem 1rem 0;
-  background: var(--nav-color-background);
+  background: linear-gradient(
+    56deg,
+    rgba(17, 101, 191, 1) 0%,
+    rgba(13, 81, 153, 1) 80%
+  );
   z-index: var(--z-fixed);
   transition: 0.4s;
+  box-shadow: 0px 10px 20px -10px rgba(0, 0, 0, 0.75);
 }
 
 .nav__container {

@@ -97,12 +97,12 @@ textarea {
   font-family: inherit;
   color: inherit;
   border-radius: 0.35rem;
-  background: rgb(239, 241, 247);
+  /* background: rgb(239, 241, 247);
   background: linear-gradient(
     180deg,
     rgba(239, 241, 247, 1) 0%,
     rgba(255, 255, 255, 1) 40%
-  );
+  ); */
   border: 1px solid #c1c1c1;
 }
 

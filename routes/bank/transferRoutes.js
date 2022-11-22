@@ -28,7 +28,7 @@ router.post("/", async (req, res, next) => {
     if (!receiverConfirmed) {
       const noReceiver = {
         userLoggedIn: updatedSender,
-        errorMessage: "Uživatelské jméno příjemce neexistuje",
+        errorMessage: "Uživatelské jméno příjemce neexistuje (uveď jej bez @)",
         status: "fail",
       };
       res.status(200).send(noReceiver);

@@ -3,7 +3,7 @@ const app = express();
 const router = express.Router();
 const bodyParser = require("body-parser");
 const User = require("../../schemas/UserSchema");
-const APIFeatures = require("../../utils/apiFeatures");
+const APIFeatures = require("../../utils/apiFeatures12");
 
 app.use(bodyParser.urlencoded({ extended: false }));
 
@@ -31,7 +31,7 @@ router.get("/", async (req, res) => {
 
     const usersCounter = users.length;
     const currentPage = req.query.page ? Number(req.query.page) : 1;
-    const textNext = usersCounter == 10 ? "Následující →" : "";
+    const textNext = usersCounter == 12 ? "Následující →" : "";
     const textPrevious =
       req.originalUrl.includes("page=1") || !req.originalUrl.includes("page=")
         ? ""
@@ -51,6 +51,14 @@ router.get("/", async (req, res) => {
       textNext: textNext,
       textPrevious: textPrevious,
       url: url,
+      name: req.session.user.name,
+      faculty: req.session.user.faculty,
+      fieldOfStudy: req.session.user.fieldOfStudy,
+      myFoto: req.session.user.profilePic,
+      educoins: req.session.user.accountBalance,
+      costs: req.session.user.accountCosts,
+      followers: req.session.user.followersCounter,
+      following: req.session.user.followingCounter,
     });
   } catch (err) {
     res.status(404).render("error");

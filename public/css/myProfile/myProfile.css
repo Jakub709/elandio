@@ -161,12 +161,12 @@ textarea {
   font-family: inherit;
   color: inherit;
   border-radius: 0.35rem;
-  background: rgb(239, 241, 247);
-  background: linear-gradient(
+  /* background: #fff; */
+  /* background: linear-gradient(
     180deg,
     rgba(239, 241, 247, 1) 0%,
     rgba(255, 255, 255, 1) 40%
-  );
+  ); */
   border: 1px solid #c1c1c1;
 }
 
@@ -202,10 +202,6 @@ textarea {
 
 .input-foto {
   margin-top: 0.7rem;
-}
-
-#region {
-  background-color: var(--body-color) !important;
 }
 
 /**************************/

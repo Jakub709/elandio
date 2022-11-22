@@ -19,11 +19,11 @@ const UserSchema = new Schema(
     locationLatitude: { type: Number },
     locationLongitude: { type: Number },
     password: { type: String, required: true },
-    profilePic: { type: String, default: "/images/profilePic.png" },
+    profilePic: { type: String, default: "/images/zz-profilePic.png" },
     moneyTransfer: { type: Array, default: 500 },
     nameTransfer: { type: Array, default: "Počáteční vklad" },
     dateTransfer: { type: Array, default: new Date() },
-    usernameTransfer: { type: Array, default: "eLandio" },
+    usernameTransfer: { type: Array, default: "elandio" },
     followers: { type: Array },
     following: { type: Array },
   },
@@ -35,6 +35,18 @@ UserSchema.virtual("accountBalance").get(function () {
   for (let i = 0; i < this.moneyTransfer.length; i++) {
     sum += this.moneyTransfer[i];
   }
+
+  return sum;
+});
+
+UserSchema.virtual("accountCosts").get(function () {
+  let sum = 0;
+  // for (let i = 0; i < this.moneyTransfer.length; i++) {
+  //   // if (this.moneyTransfer[i] < 0) {
+  //   //   sum += this.moneyTransfer[i];
+  //   // }
+  //   sum += this.moneyTransfer[i];
+  // }
 
   return sum;
 });

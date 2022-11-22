@@ -28,7 +28,6 @@ app.set("views", "views");
 // const adminRoutes = require("./routes/admin/adminRoutes");
 // app.use("/admin", adminRoutes);
 
-
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(express.static(path.join(__dirname, "public")));
 
@@ -89,6 +88,11 @@ app.use("/reset-pass", resetPassRoutes);
 app.use("/reset-pass-email", resetPassEmailRoutes);
 
 // Posts
+// - test
+app.get("/users-list-test", async (req, res, next) => {
+  res.status(200).render("users-list-test");
+});
+
 const postsSearchRoutes = require("./routes/posts/postsSearchRoutes");
 const postDeleteRoutes = require("./routes/posts/postDeleteRoutes");
 const postsListRoutes = require("./routes/posts/postsListRoutes");
