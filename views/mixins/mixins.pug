@@ -1,0 +1,66 @@
+mixin createChatImage(chatData, userLoggedIn)
+    if(!chatData)
+        return
+
+    - var i = 0
+    - var maxImagesToShow = 3
+    - var remainingUsers = chatData.users.length - maxImagesToShow
+    - remainingUsers-- // Remove 1 since we won't show our own image
+    
+    .chatImagesContainer
+        if remainingUsers > 0
+            .userCount
+                span +#{remainingUsers}
+
+        each user in chatData.users
+            if chatData.users.length != 1 && user._id == userLoggedIn._id
+                - continue
+            else if i >= maxImagesToShow    
+                - break
+            
+            img(src=user.profilePic, alt="User's profile picture", title=user.firstName)
+            - i++
+
+mixin createChatNameModal(chat)
+    #chatNameModal.modal.fade(tabindex='-1', role='dialog', aria-labelledby='chatNameModalLabel', aria-hidden='true')
+        .modal-dialog(role='document')
+            .modal-content
+                .modal-header
+                    h5#chatNameModalLabel.modal-title Změnit název chatu
+                    button.close(type='button', data-dismiss='modal', aria-label='Close')
+                    span(aria-hidden='true') &times;
+                .modal-body
+                    input#chatNameTextbox(type="text", placeholder="Vložit nový název", value=chat.chatName)
+                .modal-footer
+                    button.btn.btn-secondary(type='button', data-dismiss='modal') Zrušit
+                    button#chatNameButton.btn.btn-primary(type='button') Uložit
+
+mixin createImageUploadModal()
+    #imageUploadModal.modal.fade(tabindex='-1', role='dialog', aria-labelledby='imageUploadModalLabel', aria-hidden='true')
+        .modal-dialog(role='document')
+            .modal-content
+                .modal-header
+                    //- button.close(type='button', data-dismiss='modal', aria-label='Close')
+                    //- span(aria-hidden='true') &times;
+                .modal-body
+                    input#filePhoto(type="file", name="filePhoto", title = 'žádný obrázek nevybrán')
+
+                    .imagePreviewContainer
+                        img#imagePreview
+                .modal-footer
+                    button#imageUploadButton.button-1.button-1-colors(type='button') Uložit
+
+mixin addNewUserModal(chat)
+    #addNewUserModal.modal.fade(tabindex='-1', role='dialog', aria-labelledby='addNewUserModalLabel', aria-hidden='true')
+        .modal-dialog(role='document')
+            .modal-content
+                .modal-header
+                    h5#addNewUserModalLabel.modal-title Přidat dalšího uživatele do chatu
+                    button.close(type='button', data-dismiss='modal', aria-label='Close')
+                    span(aria-hidden='true') &times;
+                .modal-body
+                    input#addNewUserModalTextBox(type="text", autocomplete="off", style="width: 100%;")
+                    .userList(style="overflow-y: scroll; max-height: 200px; margin-top: 10px;")
+                .modal-footer
+                    button.btn.btn-secondary(type='button', data-dismiss='modal') Zrušit
+                    button#addNewUserModalButton.btn.btn-primary(type='button') Přidat

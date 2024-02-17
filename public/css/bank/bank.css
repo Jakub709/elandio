@@ -1,0 +1,389 @@
+/*===== Active link =====*/
+.active {
+  color: var(--nav-color);
+}
+
+/*========== MAIN ==========*/
+
+/**************************/
+/* GENERAL REUSABLE COMPONENTS */
+/**************************/
+
+.grid {
+  display: grid;
+  row-gap: 10rem;
+  gap: 9.6rem;
+  align-items: center;
+}
+
+.grid--2-cols {
+  grid-template-columns: 7fr 2fr;
+}
+
+.grid--3-cols {
+  grid-template-columns: 1fr 1fr 1fr;
+}
+
+.grid--2-cols-same {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.grid-column-gap {
+  column-gap: 2rem;
+}
+
+.button-1 {
+  -webkit-appearance: none;
+  background-color: var(--button-color);
+  border-radius: 0.35rem;
+  border-style: none;
+  box-sizing: border-box;
+  color: var(--nav-color);
+  cursor: pointer;
+  display: inline-block;
+  font-size: 1rem;
+  font-weight: 500;
+  line-height: 22px;
+  list-style: none;
+  margin: 0 0 0 0;
+  outline: none;
+  padding: 10px 16px;
+  position: relative;
+  text-align: center;
+  text-decoration: none;
+  letter-spacing: 0.05em;
+}
+
+.button-1:hover,
+.button-1:focus {
+  background-color: var(--button-color-hover);
+}
+
+/**************************/
+/* SEND MONEY */
+/**************************/
+.my-bank-page {
+  margin-bottom: 1.5rem;
+}
+
+.container {
+  /* 1140px */
+  max-width: 80rem;
+  padding: 0 1.6rem;
+  margin: 0 auto;
+}
+
+.my-bank {
+  margin: 1.5rem 0 1.5rem 0;
+  padding: 1.6rem 1.6rem;
+  border-radius: 0.35rem;
+  position: relative;
+  background: #fff;
+  border: 1px solid #e5e5e5;
+}
+
+.form-item {
+  position: relative;
+  margin-bottom: 1.5rem;
+}
+
+.form-item input,
+textarea {
+  -webkit-appearance: none;
+  width: 100%;
+  padding: 0.5rem;
+  margin: 0rem 0rem;
+  font-size: 1rem;
+  font-family: inherit;
+  color: inherit;
+  border-radius: 0.35rem;
+  /* background: rgb(239, 241, 247);
+  background: linear-gradient(
+    180deg,
+    rgba(239, 241, 247, 1) 0%,
+    rgba(255, 255, 255, 1) 40%
+  ); */
+  border: 1px solid #c1c1c1;
+}
+
+.form-item textarea {
+  -webkit-appearance: none;
+  height: 7.5rem;
+  padding-top: 1rem;
+}
+
+.container label {
+  position: absolute;
+  cursor: text;
+  z-index: 2;
+  top: -1.2rem;
+  left: 0px;
+  font-size: 12px;
+  font-weight: bold;
+  background: transparent;
+  border-radius: 0.35rem;
+  padding: 0 10px;
+  color: var(--main-color);
+  transition: all 0.3s ease;
+}
+
+/**************************/
+/* SECTION MOVEMENTS */
+/**************************/
+
+.section-movements {
+  margin: 1.5rem 0 1.5rem 0;
+  padding: 1.6rem 1.6rem;
+  border-radius: 0.35rem;
+  position: relative;
+  background: #fff;
+  border: 1px solid #e5e5e5;
+}
+
+.container-movements ul {
+  margin: 0; /* To remove default bottom margin */
+  padding: 0; /* To remove default left padding */
+}
+
+.responsive-table li {
+  /* border-radius: 0.35rem; */
+  padding: 10px 30px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.responsive-table li:last-child {
+  border-bottom-left-radius: 0.35rem;
+  border-bottom-right-radius: 0.35rem;
+}
+
+.responsive-table .table-header {
+  background-color: var(--button-color);
+  color: #ffffff;
+  font-size: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  border-top-left-radius: 0.35rem;
+  border-top-right-radius: 0.35rem;
+}
+.responsive-table .table-row {
+  font-size: var(--normal-font-size);
+  border-bottom: 1px solid #c1c1c1;
+  border-left: 1px solid #c1c1c1;
+  border-right: 1px solid #c1c1c1;
+  background-color: #fff;
+}
+
+.table-row--deposit {
+  color: #34a853;
+  font-weight: bold;
+}
+
+.table-row--withdrawal {
+  color: #374a69;
+  font-weight: bold;
+}
+
+.movements a {
+  color: var(--other-blue);
+}
+
+.responsive-table .col-1 {
+  flex-basis: 10%;
+}
+.responsive-table .col-2 {
+  flex-basis: 30%;
+}
+.responsive-table .col-3 {
+  flex-basis: 30%;
+}
+.responsive-table .col-4 {
+  flex-basis: 40%;
+}
+.responsive-table .col-5 {
+  flex-basis: 15%;
+}
+
+/* SUMMARY */
+.summary {
+  grid-row: 5 / 6;
+  display: flex;
+  align-items: baseline;
+  padding: 0 0.3rem;
+  margin-top: 1rem;
+}
+
+.summary__label {
+  font-size: 1.2rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  margin-right: 0.8rem;
+}
+
+.summary__value {
+  font-size: 1.2rem;
+  margin-right: 2.5rem;
+}
+
+.summary__value--in,
+.summary__value--interest {
+  color: #66c873;
+}
+
+.summary__value--out {
+  color: #f5465d;
+}
+
+/* ========== MEDIA QUERIES ==========*/
+/* For small devices reduce search*/
+@media screen and (max-width: 320px) {
+  .header__search {
+    width: 70%;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  body {
+    padding: 1rem 3rem 0 6rem;
+  }
+  .header {
+    padding: 0 3rem 0 6rem;
+  }
+  .header__container {
+    height: calc(var(--header-height) + 0.5rem);
+  }
+  .header__search {
+    width: 300px;
+    padding: 0.55rem 0.75rem;
+  }
+  .header__toggle {
+    display: none;
+  }
+  .header__logo {
+    display: block;
+  }
+
+  .header__logo__second {
+    display: block;
+  }
+
+  .header__img {
+    /* width: 40px;
+    height: 40px; */
+    order: 1;
+  }
+  .nav {
+    left: 0;
+    padding: 1.2rem 1.5rem 0;
+    width: 70px; /* Reduced navbar */
+  }
+  .nav__items {
+    row-gap: 1.7rem;
+  }
+  .nav__icon {
+    font-size: 1.3rem;
+  }
+
+  /* Element opacity */
+  .nav__logo-name,
+  .nav__name,
+  .nav__subtitle,
+  .nav__dropdown-icon {
+    opacity: 0;
+    transition: 0.3s;
+  }
+
+  /* Navbar expanded */
+  .nav:hover {
+    width: var(--nav-width);
+  }
+
+  /* Visible elements */
+  .nav:hover .nav__logo-name {
+    opacity: 1;
+  }
+  .nav:hover .nav__subtitle {
+    opacity: 1;
+  }
+  .nav:hover .nav__name {
+    opacity: 1;
+  }
+  .nav:hover .nav__dropdown-icon {
+    opacity: 1;
+  }
+}
+
+@media (max-width: 1000px) {
+  .header__logo {
+    font-size: var(--normal--font-size);
+  }
+
+  .grid--2-cols {
+    grid-template-columns: 1fr;
+  }
+
+  .grid--3-cols {
+    grid-template-columns: 1fr;
+  }
+
+  .grid--2-cols-same {
+    grid-template-columns: 1fr;
+  }
+
+  .grid {
+    row-gap: 1rem;
+  }
+}
+
+@media (max-width: 868px) {
+  .container {
+    padding: 0 0rem;
+  }
+  /*MOVEMENTS*/
+  .responsive-table .table-header {
+    display: none;
+  }
+  .responsive-table li {
+    display: block;
+  }
+  .responsive-table .col {
+    flex-basis: 100%;
+  }
+  .responsive-table .col {
+    display: flex;
+    padding: 10px 0;
+  }
+  .responsive-table .col:before {
+    color: #6c7a89;
+    padding-right: 10px;
+    content: attr(data-label);
+    flex-basis: 50%;
+    text-align: left;
+  }
+}
+
+@media (max-width: 767px) {
+  body {
+    padding: 1rem 0.5rem;
+  }
+
+  .nav__container {
+    padding-bottom: 6rem;
+  }
+
+  .responsive-table .table-row {
+    border-top: 1px solid #374a69;
+    border: 0px;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    margin-bottom: 1rem;
+  }
+
+  .my-bank {
+    padding: 1.6rem 0.8rem;
+  }
+  .section-movements {
+    padding: 1.6rem 0.8rem;
+  }
+}
+
+/**/

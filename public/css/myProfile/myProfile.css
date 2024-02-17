@@ -1,0 +1,364 @@
+/*===== Active link =====*/
+/* .active {
+  color: var(--main-color);
+} */
+
+/*========== MAIN ==========*/
+
+/**************************/
+/* GENERAL REUSABLE COMPONENTS */
+/**************************/
+
+.grid {
+  display: grid;
+  column-gap: 0.5rem;
+}
+
+.grid--2-cols {
+  grid-template-columns: 1fr 1fr;
+}
+
+.grid--two-cols {
+  grid-template-columns: 3fr 1fr;
+  column-gap: 2rem;
+}
+
+.grid--2-cols-not-same {
+  grid-template-columns: 3fr 1fr;
+}
+
+.grid--3-cols {
+  grid-template-columns: 1fr 1fr 1fr;
+}
+
+.grid--2-cols-same {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.grid-column-gap {
+  column-gap: 2rem;
+}
+
+.button-1 {
+  -webkit-appearance: none;
+  border-radius: 0.25rem;
+  border-style: none;
+  box-sizing: border-box;
+  cursor: pointer;
+  display: inline-block;
+  font-size: 1rem;
+  font-weight: 500;
+  line-height: 22px;
+  list-style: none;
+  margin: 0 0 0 0;
+  outline: none;
+  padding: 10px 16px;
+  position: relative;
+  text-align: center;
+  text-decoration: none;
+  letter-spacing: 0.05em;
+}
+
+.button-1-colors {
+  background-color: var(--button-color);
+  color: var(--nav-color);
+  margin-top: 1rem;
+}
+
+.button-1:hover,
+.button-1:focus {
+  background-color: #54a6ff;
+}
+
+.button-2-colors {
+  margin-left: 1rem;
+  margin-top: 1rem;
+  border: 1px solid var(--button-color);
+  background-color: #fff;
+  color: var(--button-color);
+}
+
+/**************************/
+/* COMPONENTS */
+/**************************/
+.my-profile-page {
+  margin-bottom: 1.5rem;
+}
+
+.container {
+  /* 1140px */
+  max-width: 80rem;
+  padding: 0 1.6rem;
+  margin: 0 auto;
+}
+
+.my-profile {
+  margin: 1.5rem 0 1.5rem 0;
+  border: 1px solid #e2dee7;
+  padding: 1.6rem 1.6rem;
+  border-radius: 0.35rem;
+  position: relative;
+  background: #fff;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+.my-profile-picture {
+  width: 75%;
+}
+
+.nav-profile {
+  width: 100%;
+  z-index: -1;
+}
+
+.nav-profile ul {
+  display: flex;
+  justify-content: space-around;
+  list-style-type: none;
+  height: 40px;
+  background: #fff;
+  border-radius: 0.35rem;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+.nav-profile ul li {
+  padding: 10px;
+  width: 100%;
+  cursor: pointer;
+  text-align: center;
+  transition: all 0.2s ease-in-out;
+}
+
+.nav-profile ul li:hover,
+.nav-profile ul li.active {
+  box-shadow: 0px -3px 0px rgba(30, 133, 255, 0.9) inset;
+}
+
+.heading-input {
+  -webkit-appearance: none;
+  padding-bottom: 0.5rem;
+  font-size: 1.2rem;
+}
+
+.heading-input-location {
+  -webkit-appearance: none;
+  margin-bottom: 0rem;
+  font-size: 1.2rem;
+}
+
+.form-item {
+  position: relative;
+  margin-bottom: 15px;
+}
+
+.form-item input,
+textarea {
+  -webkit-appearance: none;
+  width: 100%;
+  padding: 0.5rem;
+  margin: 0rem 0rem;
+  font-size: 1rem;
+  font-family: inherit;
+  color: inherit;
+  border-radius: 0.35rem;
+  /* background: #fff; */
+  /* background: linear-gradient(
+    180deg,
+    rgba(239, 241, 247, 1) 0%,
+    rgba(255, 255, 255, 1) 40%
+  ); */
+  border: 1px solid #c1c1c1;
+}
+
+.form-item textarea {
+  -webkit-appearance: none;
+  height: 18rem;
+  padding-top: 1rem;
+}
+
+.container label {
+  position: absolute;
+  cursor: text;
+  z-index: 2;
+  top: -1.2rem;
+  left: 0px;
+  font-size: 12px;
+  font-weight: bold;
+  background: transparent;
+  border-radius: 0.25rem;
+  padding: 0 10px;
+  color: var(--main-color);
+  transition: all 0.3s ease;
+}
+
+.locationText {
+  font-size: 12px;
+  font-weight: bold;
+  background: transparent;
+  border-radius: 0.25rem;
+  padding: 0 10px;
+  color: var(--main-color);
+}
+
+.input-foto {
+  margin-top: 0.7rem;
+}
+
+/**************************/
+/* FOTO */
+/**************************/
+
+.avatar {
+  border-radius: 0.25rem;
+  height: 222px;
+  width: 222px;
+}
+
+.modal {
+  border: none;
+  padding: 0;
+  padding-top: var(--spacing);
+}
+
+/* for cropper */
+#imagePreview {
+  display: block;
+  max-width: 100%;
+}
+
+.info-text {
+  font-size: 12px;
+}
+
+/* ========== MEDIA QUERIES ==========*/
+/* For small devices reduce search*/
+@media screen and (max-width: 320px) {
+  .header__search {
+    width: 70%;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  body {
+    padding: 1rem 3rem 0 6rem;
+  }
+  .header {
+    padding: 0 3rem 0 6rem;
+  }
+  .header__container {
+    height: calc(var(--header-height) + 0.5rem);
+  }
+  .header__search {
+    width: 300px;
+    padding: 0.55rem 0.75rem;
+  }
+  .header__toggle {
+    display: none;
+  }
+  .header__logo {
+    display: block;
+  }
+
+  .header__logo__second {
+    display: block;
+  }
+
+  .header__img {
+    /* width: 40px;
+    height: 40px; */
+    order: 1;
+  }
+  .nav {
+    left: 0;
+    padding: 1.2rem 1.5rem 0;
+    width: 70px; /* Reduced navbar */
+  }
+  .nav__items {
+    row-gap: 1.7rem;
+  }
+  .nav__icon {
+    font-size: 1.3rem;
+  }
+
+  /* Element opacity */
+  .nav__logo-name,
+  .nav__name,
+  .nav__subtitle,
+  .nav__dropdown-icon {
+    opacity: 0;
+    transition: 0.3s;
+  }
+
+  /* Navbar expanded */
+  .nav:hover {
+    width: var(--nav-width);
+  }
+
+  /* Visible elements */
+  .nav:hover .nav__logo-name {
+    opacity: 1;
+  }
+  .nav:hover .nav__subtitle {
+    opacity: 1;
+  }
+  .nav:hover .nav__name {
+    opacity: 1;
+  }
+  .nav:hover .nav__dropdown-icon {
+    opacity: 1;
+  }
+}
+
+@media (max-width: 1000px) {
+  .header__logo {
+    font-size: var(--normal--font-size);
+  }
+
+  .my-profile-picture {
+    display: none;
+  }
+
+  .grid--2-cols {
+    grid-template-columns: 1fr;
+  }
+
+  .grid--two-cols {
+    grid-template-columns: 1fr;
+  }
+
+  .grid--3-cols {
+    grid-template-columns: 1fr;
+  }
+
+  .grid--2-cols-same {
+    grid-template-columns: 1fr;
+  }
+
+  .grid {
+    row-gap: 1rem;
+  }
+}
+
+@media (max-width: 868px) {
+  .container {
+    padding: 0 0rem;
+  }
+}
+
+@media (max-width: 767px) {
+  body {
+    padding: 1rem 0.5rem;
+  }
+
+  .responsive-table .table-row {
+    border-top: 1px solid #d5d5d5;
+  }
+
+  .my-profile {
+    padding: 1.6rem 0.8rem;
+  }
+
+  .nav__container {
+    padding-bottom: 6rem;
+  }
+}

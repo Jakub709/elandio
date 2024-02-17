@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+
+<head>
+  <!-- Google tag (gtag.js) -->
+  <script
+    async
+    src="https://www.googletagmanager.com/gtag/js?id=G-F9GM6G1RCC"
+  ></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+    gtag("js", new Date());
+
+    gtag("config", "G-F9GM6G1RCC");
+  </script>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta
+    name="description"
+    content="Budujeme komunitu studentů založenou na sdíleném vzdělávání. Staň se i ty součástí světa eLandio, v němž lidé směňují své znalosti a dovednosti v unikátní ekonomice!"
+  />
+  <!-- Always include this line of code!!!-->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" href="/images/favicon.png" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;600;700&amp;display=swap"
+    rel="stylesheet"
+  />
+  <link rel="stylesheet" href="css/index/general.css" />
+  <link rel="stylesheet" href="css/index/index.css" />
+  <link rel="stylesheet" href="css/index/queries.css" />
+  <script
+    type="module"
+    src="https://unpkg.com/ionicons@5.4.0/dist/ionicons/ionicons.esm.js"
+  ></script>
+  <script
+    nomodule=""
+    src="https://unpkg.com/ionicons@5.4.0/dist/ionicons/ionicons.js"
+  ></script>
+  <script
+    defer=""
+    src="https://unpkg.com/smoothscroll-polyfill@0.4.4/dist/smoothscroll.min.js"
+  ></script>
+  <title>eLandio</title>
+  <!-- Google tag (gtag.js) -->
+  <script
+    async
+    src="https://www.googletagmanager.com/gtag/js?id=G-PNDGH5XFV8"
+  ></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+    gtag("js", new Date());
+
+    gtag("config", "G-PNDGH5XFV8");
+  </script>
+</head>
+<body>
+  <header class="header sticky">
+    <a href="/"
+      ><img class="logo" alt="eLandio logo" src="images/elandio_logo.png"
+    /></a>
+    <nav class="main-nav">
+      <ul class="main-nav-list">
+        <li>
+          <a class="main-nav-link nav-log" href="/register">Registrace</a>
+        </li>
+        <li>
+          <a class="main-nav-link nav-cta" href="/login"
+            >P&rcaron;ihl&aacute;sit se</a
+          >
+        </li>
+      </ul>
+    </nav>
+    <button class="btn-mobile-nav">
+      <ion-icon class="icon-mobile-nav" name="menu-outline"></ion-icon>
+      <ion-icon class="icon-mobile-nav" name="close-outline"></ion-icon>
+    </button>
+  </header>
+  <main>
+    <section class="section-hero">
+      <div class="hero">
+        <div class="hero-text-box">
+          <h1 class="heading-primary">
+            Já učím tebe,<br />jiný <span class="blue">učí mě</span>
+          </h1>
+          <p class="hero-description">
+            Budujeme komunitu studentů zalo&zcaron;enou na
+            sd&iacute;len&eacute;m vzd&ecaron;l&aacute;v&aacute;n&iacute;. Staň
+            se i ty součástí světa eLandio, v němž spolužáci směňují své
+            znalosti a dovednosti v unikátní ekonomice!
+          </p>
+          <a class="btn btn--full margin-right-sm" href="/register"
+            >Stát se eLandistou</a
+          ><a class="btn btn--outline" href="#how">Dozvědět se více</a>
+          <div class="users-imgs-container">
+            <div class="users-imgs">
+              <img
+                src="images/customers/fotografka.jpg"
+                alt="Customer photo"
+              /><img
+                class="small-screen"
+                src="images/customers/ilona.jpg"
+                alt="Customer photo"
+              /><img src="images/customers/buba.jpg" alt="Customer photo" /><img
+                class="small-screen"
+                src="images/customers/petr.jpg"
+                alt="Customer photo"
+              /><img
+                class="small-screen"
+                src="images/customers/eva.jpg"
+                alt="Customer photo"
+              /><img src="images/customers/iva.jpg" alt="Customer photo" />
+            </div>
+            <!-- <p class="users-text">
+              Je nás již 41. <span>Přidej se k nám!</span>
+            </p> -->
+            <p class="users-text">
+              Je nás již <%=counter%>. <span>Přidej se k nám!</span>
+            </p>
+          </div>
+        </div>
+        <div class="hero-img-box">
+          <picture>
+            <source srcset="images/index.jpg" type="image/png" />
+            <img class="hero-img" src="images/developer.png" alt="" />
+          </picture>
+        </div>
+      </div>
+    </section>
+    <section class="section-featured">
+      <div class="container">
+        <h2 class="heading-featured-in">V budoucnu o nás napíšou :-)</h2>
+        <div class="logos">
+          <img src="images/logos/techcrunch.png" alt="techcrunch logo" /><img
+            src="images/logos/usa-today.png"
+            alt="usa-today logo"
+          /><img
+            src="images/logos/the-new-york-times.png"
+            alt="the-new-yorks-times logo"
+          /><img
+            src="images/logos/business-insider.png"
+            alt="business-insider logo"
+          /><img src="images/logos/forbes.png" alt="forbes" />
+        </div>
+      </div>
+    </section>
+    <section class="section-how" id="how">
+      <div class="container">
+        <span class="subheading">Projekt eLandio</span>
+        <h2 class="heading-secondary">
+          Co je to eLandio a jak funguje sdílené vzdělávání?
+        </h2>
+      </div>
+      <div class="container grid grid--2-cols grid--center-v">
+        <!-- STEP 01-->
+        <div class="step-text-box">
+          <p class="step-number">01</p>
+          <h3 class="heading-tertiary">Co je to sdílené vzdělávání?</h3>
+          <p class="step-description">
+            <b>„Já učím tebe, jiný učí mě.“</b> Středobodem eLandia jsou
+            příspěvky ve formě nabídek a poptávek, ve kterých můžeš nabízet
+            (respektive poptávat) doučování, skupinové kurzy, pomoc s úkoly,
+            zkrátka cokoliv tě jenom napadne. Prostředkem směny však nejsou
+            peníze ve tvé peněžence, nýbrž virtuální měna Educoin, kterou si lze
+            vydělat pouze od ostatních uživatelů.
+          </p>
+        </div>
+        <div class="step-img-box">
+          <img
+            class="step-img"
+            src="images/app/app-screen-1.jpg"
+            alt="iPhone app        preferences selection screen"
+          />
+        </div>
+        <!-- STEP 02-->
+        <div class="step-img-box">
+          <img
+            class="step-img"
+            src="images/app/app-screen-2.jpg"
+            alt="iPhone app        meal approving plan screen"
+          />
+        </div>
+        <div class="step-text-box">
+          <p class="step-number">02</p>
+          <h3 class="heading-tertiary">Jak funguje Educoin?</h3>
+          <p class="step-description">
+            Ekonomika eLandia funguje jako kterákoliv jiná, na základě nabídky a
+            poptávky. Do začátku získáš 500 Educoinů, aby se trh mohl pořádně
+            rozeběhnout. Další Educoiny si již musíš vydělat od ostatních
+            studentů. Ukažme si příklad. Jsi přeborníkem v matematice a
+            potřebuješ se zbavit strachu hovořit anglicky? Vydělej si Educoiny
+            např. skrze doučování a následně si vyber mezi spolužáky toho
+            nejlepšího angličtináře, který ti pomůže rozmluvit se.
+          </p>
+        </div>
+        <!-- STEP 03-->
+        <div class="step-text-box">
+          <p class="step-number">03</p>
+          <h3 class="heading-tertiary">Jak ti eLandio pomůže?</h3>
+          <p class="step-description">
+            eLandio je příležitostí, kterak tvé dovednosti a znalosti můžeš
+            směnit s dalšími spolužáky. Je to šance poznat nové lidi a naučit se
+            třeba nový cizí jazyk či zvládnout náročný test z biochemie. eLandio
+            však není pouze o studiu, ale i o zábavě a setkávání. Nabízet a
+            poptávat můžeš zkrátka vše. Máš doma např. 3D tiskárnu? Tak vytvoř
+            kurz práce s ní. Fantazii se meze nekladou.
+          </p>
+        </div>
+        <div class="step-img-box">
+          <img
+            class="step-img"
+            src="images/app/app-screen-3.jpg"
+            alt="iPhone app        delivery screen"
+          />
+        </div>
+        <!-- STEP 02-->
+        <div class="step-img-box">
+          <img
+            class="step-img"
+            src="images/app/app-screen-4.jpg"
+            alt="iPhone app        meal approving plan screen"
+          />
+        </div>
+        <div class="step-text-box">
+          <p class="step-number">04</p>
+          <h3 class="heading-tertiary">Jak se stát eLandistou?</h3>
+          <p class="step-description">
+            Součástí komunity eLandio se může stát každý student Masarykovy
+            univerzity. Jedinou podmínkou je uvést svůj <b>studijní email</b>.
+            Čím více nás bude, tím větší hodnotu ti eLandio bude moci nabídnout.
+            Tak na nic nečekej a zaregistruj se právě
+            <a class="link" href="/register">teď 🙂</a>.
+          </p>
+        </div>
+      </div>
+    </section>
+    <!-- <section class="section-features">
+      <div class="container grid grid--4-cols grid--center-v">
+        <div class="feature">
+          <div class="feature-icons">
+            <ion-icon
+              class="feature-icon grid-justify-center"
+              name="infinite-outline"
+            ></ion-icon>
+          </div>
+          <p class="feature-title">Sdílejte a učte se</p>
+          <p class="feature-text"></p>
+        </div>
+        <div class="feature">
+          <div class="feature-icons">
+            <ion-icon class="feature-icon" name="nutrition-outline"></ion-icon>
+          </div>
+          <p class="feature-title">Local and organic</p>
+          <p class="feature-text">
+            Our cooks only use local, fresh, and organic products to prepare
+            your meals.
+          </p>
+        </div>
+        <div class="feature">
+          <div class="feature-icons">
+            <ion-icon class="feature-icon" name="leaf-outline"></ion-icon>
+          </div>
+          <p class="feature-title">No waste</p>
+          <p class="feature-text">
+            All our partners only use reusable containers to package all your
+            meals.
+          </p>
+        </div>
+        <div class="feature">
+          <div class="feature-icons">
+            <ion-icon class="feature-icon" name="pause-outline"></ion-icon>
+          </div>
+          <p class="feature-title">Pause anytime</p>
+          <p class="feature-text">
+            Going on vacation? Just pause your subscription, and we refund
+            unused days.
+          </p>
+        </div>
+      </div>
+    </section> -->
+  </main>
+  <footer class="footer">
+    <div class="waves">
+      <div class="wave" id="wave1"></div>
+      <div class="wave" id="wave2"></div>
+      <div class="wave" id="wave3"></div>
+      <div class="wave" id="wave4"></div>
+    </div>
+    <ul class="social-icon">
+      <li class="social-icon__item">
+        <a
+          class="social-icon__link"
+          href="https://www.facebook.com/groups/3238235073171374"
+        >
+          <ion-icon name="logo-facebook"></ion-icon>
+        </a>
+      </li>
+      <li class="social-icon__item">
+        <a class="social-icon__link" href="/kontakt">
+          <ion-icon name="logo-instagram"></ion-icon>
+        </a>
+      </li>
+    </ul>
+    <ul class="menu">
+      <li class="menu__item"><a class="menu__link" href="/gdpr">GDPR</a></li>
+      <li class="menu__item">
+        <a class="menu__link" href="/kontakt">Kontakt</a>
+      </li>
+    </ul>
+    <p>&copy; 2023 eLandio by JS</p>
+    <a class="freepik" href="https://www.freepik.com/vectors/connecting-people"
+      >Connecting people vector created by storyset - www.freepik.com</a
+    >
+  </footer>
+  <script
+    type="module"
+    src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"
+  ></script>
+  <script
+    nomodule
+    src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"
+  ></script>
+  <script defer="" src="js/mobileNavigation.js"></script>
+</body>

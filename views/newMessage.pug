@@ -1,0 +1,10 @@
+extends layouts/message-layout.pug
+
+block content    
+    .chatPageContainer
+        .chatTitleBar
+            label(for="userSearchTextbox") Příjemce:
+            #selectedUsers
+                input#userSearchTextbox(type="text", placeholder="Uveďte jméno")
+        .resultsContainer
+        button#createChatButton(disabled) Vytvořit chat

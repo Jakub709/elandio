@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <base href="/" />
+
+    <!--========== BOX ICONS ==========-->
+    <link rel="icon" href="/images/favicon.png" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;600;700&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css"
+    />
+
+    <!--========== CSS ==========-->
+    <link
+      rel="stylesheet"
+      href="/css/general/generalInner.css
+  "
+    />
+    <link
+      rel="stylesheet"
+      href="/css/after-login/after-login.css
+    "
+    />
+
+    <!--========== JQUERY a SWEET ==========-->
+    <script
+      src="https://code.jquery.com/jquery-3.5.1.min.js"
+      integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0="
+      crossorigin="anonymous"
+    ></script>
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+    <title>Vítej v eLandiu</title>
+  </head>
+  <body>
+    <!--========== HEADER ==========-->
+    <header class="header">
+      <div class="header__container">
+        <img
+          src="/images/elandio_logo.png"
+          alt=""
+          class="header__img header__img__delete"
+        />
+
+        <!-- <p class="header__logo">Vítej v eLandiu</p>
+        <p class="header__logo__second">
+          <i>„Já učím tebe, jiný učí mě.“ </i>
+        </p> -->
+
+        <div class="header__toggle">
+          <i class="bx bx-menu" id="header-toggle"></i>
+        </div>
+      </div>
+    </header>
+
+    <!--========== NAV ==========-->
+    <div class="nav" id="navbar">
+      <nav class="nav__container">
+        <div>
+          <a href="/posts-list" class="nav__link nav__logo">
+            <i class="bx bx-world nav__icon"></i>
+            <img
+              src="/images/elandio_logo_sidebar.png"
+              alt=""
+              class="header__img"
+            />
+          </a>
+
+          <div class="nav__list">
+            <div class="nav__items">
+              <h3 class="nav__subtitle">Příspěvky</h3>
+
+              <a href="/posts-list" class="nav__link">
+                <i class="bx bx-task nav__icon"></i>
+                <span class="nav__name">Seznam příspěvků</span>
+              </a>
+
+              <a href="/my-posts" class="nav__link">
+                <i class="bx bx-pencil nav__icon"></i>
+                <span class="nav__name">Moje příspěvky</span>
+              </a>
+            </div>
+
+            <div class="nav__items">
+              <h3 class="nav__subtitle">Uživatelé</h3>
+
+              <a href="/users-list" class="nav__link">
+                <i class="bx bx-user nav__icon"></i>
+                <span class="nav__name">Seznam uživatelů</span>
+              </a>
+              <div class="nav__dropdown">
+                <div class="nav__link">
+                  <i class="bx bx-cog nav__icon"></i>
+                  <span class="nav__name">Můj profil</span>
+                  <i
+                    class="bx bx-chevron-down nav__icon nav__dropdown-icon"
+                  ></i>
+                </div>
+
+                <div class="nav__dropdown-collapse">
+                  <div class="nav__dropdown-content">
+                    <a href="/my-profile" class="nav__dropdown-item"
+                      >Editovat profil</a
+                    >
+                    <a href="/my-profile-watch" class="nav__dropdown-item"
+                      >Zobrazit profil</a
+                    >
+                    <a href="/bank" class="nav__dropdown-item">Educoiny</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="nav__items">
+              <a href="/notifications" class="nav__link">
+                <i class="bx bx-bell nav__icon"></i>
+                <span class="nav__name">Oznámení</span>
+              </a>
+              <a href="/messages" class="nav__link">
+                <i class="bx bx-message-rounded nav__icon"></i>
+                <span class="nav__name">Zprávy</span>
+                <span id="messagesBadge"></span>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <a href="/logout" class="nav__link nav__logout">
+          <i class="bx bx-log-out nav__icon"></i>
+          <span class="nav__name">Odhlásit se</span>
+        </a>
+      </nav>
+    </div>
+
+    <!--========== CONTENTS ==========-->
+    <main>
+      <section class="section-hero">
+        <div class="hero">
+          <div class="hero-text-box">
+            <h1 class="heading-primary">
+              Hezký den z&nbsp;<span class="blue">eLandia</span>
+            </h1>
+            <div class="hero-description">
+              <p>
+                V současné době máme <b><%=counter%></b> uživatelů. Pojď se s
+                nimi seznámit a naučit se něco nového.<br />
+              </p>
+            </div>
+
+            <a class="btn btn--full margin-right-sm" href="/posts-list"
+              >Příspěvky</a
+            ><a class="btn btn--outline" href="/notifications">Notifikace</a>
+          </div>
+
+          <div class="hero-img-box">
+            <picture>
+              <source srcset="/images/student.jpg" type="image/png" />
+              <img class="hero-img" src="/images/student.png" alt="" />
+            </picture>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <script src="/js/commonLoggedIn.js"></script>
+  </body>
+</html>

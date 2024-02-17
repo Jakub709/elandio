@@ -1,0 +1,46 @@
+{
+  "name": "akropolis",
+  "version": "1.0.1",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js"
+  },
+  "author": "Jakub Solnička",
+  "license": "ISC",
+  "dependencies": {
+    "admin-bro": "^4.0.1",
+    "admin-bro-expressjs": "^2.1.1",
+    "admin-bro-mongoose": "^0.5.2",
+    "aws-sdk": "^2.1199.0",
+    "bcrypt": "^5.0.1",
+    "body-parser": "^1.20.1",
+    "bootstrap-icons": "^1.9.1",
+    "chart.js": "^3.9.1",
+    "compression": "^1.7.4",
+    "cookie-parser": "^1.4.6",
+    "cors": "^2.8.5",
+    "cron": "^2.1.0",
+    "cropperjs": "^1.5.12",
+    "dotenv": "^16.0.1",
+    "ejs": "^3.1.6",
+    "express": "^4.17.3",
+    "express-session": "^1.17.3",
+    "infinite-scroll": "^4.0.1",
+    "leaflet": "^1.9.1",
+    "leaflet-canvas-marker-good": "^0.2.0",
+    "mongodb": "^4.7.0",
+    "mongoose": "^6.2.10",
+    "multer": "^1.4.5-lts.1",
+    "node-cron": "^3.0.2",
+    "nodemailer": "^6.7.5",
+    "path": "^0.12.7",
+    "pug": "^3.0.2",
+    "screen-size-detector": "^1.0.4",
+    "socket.io": "^2.5.0",
+    "sweetalert2": "^11.4.9"
+  },
+  "engines": {
+    "node": "^16"
+  }
+}

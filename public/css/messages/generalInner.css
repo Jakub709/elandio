@@ -1,0 +1,469 @@
+/* ========== GOOGLE FONTS ==========*/
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap");
+
+/*========== VARIABLES CSS ==========*/
+:root {
+  --header-height: 3.5rem;
+  --nav-width: 219px;
+
+  /*========== Colors ==========*/
+  --button-color: #1165bf;
+  --button-color-hover: #147aed;
+  --main-color: #374a69;
+  --body-color: #eff1f7;
+  --nav-color: #fff;
+  --nav-color-background: #1165bf;
+
+  /*========== Font and typography ==========*/
+  --body-font: "Poppins", sans-serif;
+  --high--font-size: 1.2rem;
+  --normal-font-size: 0.938rem;
+  --small-font-size: 0.75rem;
+  --smaller-font-size: 0.75rem;
+
+  /*========== Font weight ==========*/
+  --font-medium: 500;
+  --font-semi-bold: 600;
+
+  /*========== z index ==========*/
+  --z-fixed: 100;
+}
+
+@media screen and (min-width: 1024px) {
+  :root {
+    --normal-font-size: 1rem;
+    --small-font-size: 0.875rem;
+    --smaller-font-size: 0.813rem;
+  }
+}
+
+/*========== BASE ==========*/
+*,
+::before,
+::after {
+  box-sizing: border-box;
+}
+
+*:focus {
+  outline: none;
+}
+
+body {
+  margin: var(--header-height) 0 0 0;
+  padding: 1rem 1rem;
+  font-family: var(--body-font);
+  font-size: var(--normal-font-size);
+  background-color: var(--body-color);
+  color: var(--main-color);
+}
+
+h3 {
+  margin: 0;
+}
+
+a {
+  text-decoration: none;
+}
+
+.nav a:hover {
+  text-decoration: none;
+  color: var(--body-color);
+}
+
+.nav__dropdown-content a:hover {
+  text-decoration: none;
+  color: var(--main-color);
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/*========== HEADER ==========*/
+.headerFixedMistakeForSearchUsers {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: var(--nav-color);
+  padding: 0 1rem;
+  z-index: var(--z-fixed);
+  border-bottom: 1px solid #e5e5e5;
+}
+
+.header__container {
+  display: flex;
+  align-items: center;
+  height: var(--header-height);
+  justify-content: space-between;
+}
+
+.header__img {
+  width: 75px;
+  /* height: 35px;
+  border-radius: 50%; */
+}
+
+.header__logo {
+  color: var(--main-color);
+  font-size: var(--high--font-size);
+  font-weight: var(--font-semi-bold);
+  display: block;
+  margin: 0 !important;
+}
+
+.header__logo__second {
+  color: var(--main-color);
+  font-size: var(--normal--font-size);
+  display: none;
+}
+
+.header__search {
+  display: flex;
+  padding: 0.4rem 0.75rem;
+  background-color: var(--body-color);
+  border-radius: 0.35rem;
+}
+
+.header__input {
+  -webkit-appearance: none;
+  width: 100%;
+  border: none;
+  outline: none;
+  background-color: var(--body-color);
+}
+
+.header__input::placeholder {
+  -webkit-appearance: none;
+  font-family: var(--body-font);
+  color: var(--main-color);
+}
+
+.header__icon,
+.header__toggle {
+  font-size: 1.2rem;
+}
+
+.header__toggle {
+  color: var(--main-color);
+  cursor: pointer;
+}
+
+/*========== NAV ==========*/
+.nav {
+  position: fixed;
+  top: 0;
+  left: -100%;
+  height: 100vh;
+  padding: 1rem 1rem 0;
+  background-color: var(--nav-color-background);
+  border: 1px solid var(--nav-color-background);
+  z-index: var(--z-fixed);
+  transition: 0.4s;
+}
+
+.nav__container {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding-bottom: 3rem;
+  overflow: auto;
+  scrollbar-width: none; /* For mozilla */
+}
+
+/* For Google Chrome and others */
+.nav__container::-webkit-scrollbar {
+  display: none;
+}
+
+.nav__logo {
+  font-weight: var(--font-semi-bold);
+  margin-bottom: 2.5rem;
+}
+
+.nav__list,
+.nav__items {
+  display: grid;
+}
+
+.nav__list {
+  row-gap: 3.3rem;
+}
+
+.nav__items {
+  row-gap: 1.5rem;
+}
+
+.nav__subtitle {
+  font-size: 1.1rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.1rem;
+  color: var(--nav-color);
+  text-align: center;
+}
+
+.nav__link {
+  display: flex;
+  align-items: center;
+  color: var(--nav-color);
+}
+
+.nav__icon {
+  font-size: 1.2rem;
+  margin-right: 0.5rem;
+  color: var(--nav-color);
+}
+
+.nav__name {
+  font-size: var(--small-font-size);
+  font-weight: var(--font-medium);
+  white-space: nowrap;
+}
+
+.nav__name:hover {
+  font-size: 0.95rem;
+}
+
+.nav__logout {
+  margin-top: 3rem;
+}
+
+/* Dropdown */
+.nav__dropdown {
+  overflow: hidden;
+  max-height: 21px;
+  transition: 0.4s ease-in-out;
+}
+
+.nav__dropdown-collapse {
+  background-color: var(--body-color);
+  border-radius: 0.35rem;
+  margin-top: 1rem;
+}
+
+.nav__dropdown-content {
+  display: grid;
+  row-gap: 0.5rem;
+  padding: 0.75rem 2.5rem 0.75rem 1.8rem;
+}
+
+.nav__dropdown-item {
+  font-size: 0.85rem;
+  font-weight: var(--font-medium);
+  color: var(--main-color);
+}
+
+.nav__dropdown-item:hover {
+  font-weight: 700;
+}
+
+.nav__dropdown-icon {
+  margin-left: auto;
+  transition: 0.4s;
+}
+
+/* Show dropdown collapse */
+.nav__dropdown:hover {
+  max-height: 100rem;
+}
+
+/* Rotate icon arrow */
+.nav__dropdown:hover .nav__dropdown-icon {
+  transform: rotate(180deg);
+}
+
+/*===== Show menu =====*/
+.show-menu {
+  left: 0;
+}
+
+.blue {
+  color: var(--other-blue);
+  font-weight: 600;
+}
+
+/*========== MAIN ==========*/
+
+/**************************/
+/* GENERAL REUSABLE COMPONENTS */
+/**************************/
+
+.grid {
+  display: grid;
+  row-gap: 10rem;
+  gap: 9.6rem;
+  align-items: center;
+}
+
+.grid--2-cols {
+  grid-template-columns: 7fr 2fr;
+}
+
+.grid--3-cols {
+  grid-template-columns: 1fr 1fr 1fr;
+}
+
+.grid--2-cols-same {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.grid-column-gap {
+  column-gap: 2rem;
+}
+
+.button-1 {
+  background-color: var(--button-color);
+  border-radius: 0.35rem;
+  border-style: none;
+  box-sizing: border-box;
+  color: var(--nav-color);
+  cursor: pointer;
+  display: inline-block;
+  font-size: 1rem;
+  font-weight: 500;
+  line-height: 22px;
+  list-style: none;
+  margin: 0 0 0 0;
+  outline: none;
+  padding: 10px 16px;
+  position: relative;
+  text-align: center;
+  text-decoration: none;
+  letter-spacing: 0.05em;
+}
+
+.button-1:hover,
+.button-1:focus {
+  background-color: var(--button-color-hover);
+}
+
+.footer {
+  text-align: center;
+}
+
+/**************************/
+/* SECTION CHATS */
+/**************************/
+.my-message-page {
+  margin-bottom: 1.5rem;
+}
+
+.container {
+  max-width: 80rem;
+  padding: 0 1.6rem;
+  margin: 0 auto;
+}
+
+.section-chats {
+  margin: 1.5rem 0 1.5rem 0;
+  padding: 1.6rem 1.6rem;
+  border-radius: 0.35rem;
+  background: #fff;
+  border: 1px solid #e5e5e5;
+}
+
+/* ========== MEDIA QUERIES ==========*/
+
+@media screen and (min-width: 770px) {
+  body {
+    padding: 1rem 3rem 0 6rem;
+  }
+  .headerFixedMistakeForSearchUsers {
+    padding: 0 3rem 0 6rem;
+  }
+  .header__container {
+    height: calc(var(--header-height) + 0.5rem);
+  }
+  .header__search {
+    width: 300px;
+    padding: 0.55rem 0.75rem;
+  }
+  .header__toggle {
+    display: none;
+  }
+
+  .header__logo__second {
+    display: block;
+    padding-top: 1rem;
+  }
+
+  .header__img {
+    /* width: 40px;
+      height: 40px; */
+    order: 1;
+  }
+  .nav {
+    left: 0;
+    padding: 1.2rem 1.5rem 0;
+    width: 70px; /* Reduced navbar */
+  }
+  .nav__items {
+    row-gap: 1.7rem;
+  }
+  .nav__icon {
+    font-size: 1.3rem;
+  }
+
+  /* Element opacity */
+  .nav__logo-name,
+  .nav__name,
+  .nav__subtitle,
+  .nav__dropdown-icon {
+    opacity: 0;
+    transition: 0.3s;
+  }
+
+  /* Navbar expanded */
+  .nav:hover {
+    width: var(--nav-width);
+  }
+
+  /* Visible elements */
+  .nav:hover .nav__logo-name {
+    opacity: 1;
+  }
+  .nav:hover .nav__subtitle {
+    opacity: 1;
+  }
+  .nav:hover .nav__name {
+    opacity: 1;
+  }
+  .nav:hover .nav__dropdown-icon {
+    opacity: 1;
+  }
+}
+@media (max-width: 1000px) {
+  .header__logo {
+    font-size: var(--normal--font-size);
+  }
+}
+
+@media (max-width: 868px) {
+  .container {
+    padding: 0 0rem;
+  }
+}
+
+@media (max-width: 767px) {
+  body {
+    padding: 1rem 0.5rem;
+  }
+
+  .nav__container {
+    padding-bottom: 6rem;
+  }
+
+  .responsive-table .table-row {
+    border-top: 1px solid #374a69;
+    border: 0px;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    margin-bottom: 1rem;
+  }
+
+  .section-chats {
+    padding: 1.6rem 0.8rem;
+  }
+}
