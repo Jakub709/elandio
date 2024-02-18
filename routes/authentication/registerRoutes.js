@@ -29,7 +29,7 @@ router.post("/", async (req, res, next) => {
     const username = req.body.username.trim();
     const email = req.body.email.trim();
     const emailDomena = email.split("@").pop();
-    const seznamDomen = ["mail.muni.cz", "muni.cz", "elandio.cz"];
+    const seznamDomen = ["mail.muni.cz", "muni.cz", "elandio.cz", "seznam.cz"];
     const faculty = req.body.faculty.trim();
     const password = req.body.password;
     const passwordConf = req.body.passwordConf;
@@ -156,7 +156,7 @@ router.post("/", async (req, res, next) => {
             const id = req.session.user._id;
 
             // Potvrzovací email
-            const emailText = `<b>eLandio Tě vítá!</b> <br><br> Stačí kliknout na tento <a href=https://elandio.cz/account-confirmed/${id}> odkaz</a> a tvůj účet bude aktivován. <br><br>Krásný den přeje <br> <b>Jakub</b>`;
+            const emailText = `<b>eLandio Tě vítá!</b> <br><br> Stačí kliknout na tento <a href=https://elandio.cz/account-confirmed/${id}> odkaz</a> a tvůj účet bude aktivován. K tomu bych tě chtěl moc poprosit o vyplnění krátkého <a href=https://forms.gle/DjHHH7x8rJjJL5zE9> dotazníku</a>. Velice mi to pomůže.<br><br>Krásný den přeje <br> <b>Jakub</b>`;
 
             require("dotenv").config();
             const transporter = nodemailer.createTransport({

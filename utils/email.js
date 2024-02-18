@@ -1,5 +1,5 @@
 //test nodemaileru
-const emailList = ["tereza.gabajova@smarty.cz"];
+const emailList = ["j.solnicka@seznam.cz"];
 
 const textEmail = `<b>Pěkný den,</b> <br><br> 
 jmenuji se Jakub Solnička a jsem začínající programátor. Vaši firmu jsem nalezl na StartUpJobs a chtěl bych vás tímto emailem poprosit o zpětnou vazbu na projekt <a href=https://ilandio.cz>ilandio.cz</a> týkající se vzdělávání lidí v IT. Bylo by možné, aby se programátoři ve vaší firmě o mé stránce dozvěděli a poskytli mi kratičký feedback (ať už k technickému zpracování či k samotné myšlence)? 
