@@ -103,11 +103,13 @@ router.post("/", async (req, res, next) => {
       );
       // admin data
       const adminData = await Admin.findByIdAndUpdate(
-        "659e9fd6213e43b164a1ef3b",
+        "660ebae2c0d98cd9c3b0a49c",
         {
           $push: {
             dateTransactions: new Date(),
             valueTransactions: moneyTransfer,
+            senderTransactions: senderDB.username,
+            receiverTransactions: receiverDB.username,
           },
         },
         {

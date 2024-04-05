@@ -4,7 +4,6 @@ const router = express.Router();
 const bodyParser = require("body-parser");
 const Admin = require("../../schemas/AdminSchema");
 const User = require("../../schemas/UserSchema");
-const Post = require("../../schemas/PostSchema");
 
 const cron = require("node-cron");
 
@@ -40,12 +39,11 @@ const dnesniDatum = d + "." + m + "." + r;
 router.get("/", async (req, res, next) => {
   // Počítadla uživatelů/příspěvků
   const users = (await User.find()).length;
-  const posts = (await Post.find()).length;
 
   //Vytvoření/kontrola existence admin účtu
   // Nalezení admin účtu
 
-  const adminAccount = await Admin.findById("659e9fd6213e43b164a1ef3b");
+  const adminAccount = await Admin.findById("660ebae2c0d98cd9c3b0a49c");
 
   // if (!adminAccount) {
   //   const adminData = {
@@ -53,7 +51,7 @@ router.get("/", async (req, res, next) => {
   //   };
   //   Admin.create(adminData);
   // } else {
-
+  //   console.log("vše ok :)");
   // }
 
   const counterTransfers = adminAccount.valueTransactions.reduce(
@@ -61,65 +59,13 @@ router.get("/", async (req, res, next) => {
     0
   );
 
-  const counterFollowersCounter = adminAccount.dateNewFollowersCounter;
-  const counterLoginsCounter = adminAccount.dateNewLoginsCounter;
-  console.log(counterTransfers);
-  console.log(adminAccount.valueTransactions);
-
   res.status(200).render("admin-secret-page", {
     errorMessage: "",
     dnesniDen: dnesniDen,
     dnesniDatum: dnesniDatum,
     counterUsers: users,
-    counterPosts: posts,
     counterTransfers: counterTransfers,
-    counterFollowers: counterFollowersCounter,
-    counterLogins: counterLoginsCounter,
   });
 });
 
-// cron.schedule("00 00 * * *", async () => {
-//   console.log("Running a task every midnight (1:00 am)");
-//   const usersCounter = (await User.find()).length;
-//   const postsCounter = (await Post.find()).length;
-//   console.log(postsCounter);
-//   console.log(usersCounter);
-//   const today = new Date();
-//   const timeNow = today.getTime();
-//   let data;
-//   //Admin.create(data);
-
 module.exports = router;
-
-// const AdminBro = require("admin-bro");
-// const AdminBroExpress = require("admin-bro-expressjs");
-// const AdminBroMongoose = require("admin-bro-mongoose");
-
-// const mongoose = require("mongoose");
-
-// AdminBro.registerAdapter(AdminBroMongoose);
-
-// const adminBro = new AdminBro({
-//   databases: [mongoose],
-//   rootPath: "/admin",
-// });
-
-// const ADMIN = {
-//   email: process.env.ADMIN_EMAIL || "admin@example.com",
-//   password: process.env.ADMIN_PASSWORD || "lovejs",
-// };
-
-// const router = AdminBroExpress.buildAuthenticatedRouter(adminBro, {
-//   cookieName: process.env.ADMIN_COOKIE_NAME || "admin-bro",
-//   cookiePassword:
-//     process.env.ADMIN_COOKIE_PASS ||
-//     "supersecret-and-long-password-for-a-cookie-in-the-browser",
-//   authenticate: async (email, password) => {
-//     if (email === ADMIN.email && password === ADMIN.password) {
-//       return ADMIN;
-//     }
-//     return null;
-//   },
-// });
-
-// module.exports = router;

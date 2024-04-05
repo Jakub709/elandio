@@ -1,247 +1,175 @@
 const chart1 = document.getElementById("myChart1").getContext("2d");
-const chart2 = document.getElementById("myChart2").getContext("2d");
 
 const currentDate = new Date();
 const day = currentDate.getDay();
 console.log(day);
 
-// if (day === 0) {
-//   labelsDay =
-//     "neděle",
-//     "pondělí",
-//     "úterý",
-//     "středa",
-//     "čtvrtek",
-//     "pátek",
-//     "sobota",
-//   ;
-// } else if (day === 1) {
-//   labelsDay =
-//     "pondělí",
-//     "úterý",
-//     "středa",
-//     "čtvrtek",
-//     "pátek",
-//     "sobota",
-//     "neděle",
-//   ;
-// } else if (day === 2) {
-//   labelsDay =
-//     "úterý",
-//     "středa",
-//     "čtvrtek",
-//     "pátek",
-//     "sobota",
-//     "neděle",
-//     "pondělí";
-// } else if (day === 3) {
-//   labelsDay =
-//     "středa",
-//     "čtvrtek",
-//     "pátek",
-//     "sobota",
-//     "neděle",
-//     "pondělí",
-//     "úterý";
-// } else if (day === 4) {
-//   labelsDay =
-//     "čtvrtek",
-//     "pátek",
-//     "sobota",
-//     "neděle",
-//     "pondělí",
-//     "úterý",
-//     "středa",;
-// } else if (day === 5) {
-//   labelsDay =
-//     "pátek",
-//     "sobota",
-//     "neděle",
-//     "pondělí",
-//     "úterý",
-//     "středa",
-//     "čtvrtek";
-// } else if (day === 6) {
-//   labelsDay =
-//     "úterý",
-//     "středa",
-//     "čtvrtek",
-//     "pátek",
-//     "sobota",
-//     "neděle",
-//     "pondělí";
-// }
-
 let labelsDay;
-if (day === 0) {
-  labelsDay = "neděle";
+if (day === 6) {
+  labelsDay = [
+    "neděle",
+    "pondělí",
+    "úterý",
+    "středa",
+    "čtvrtek",
+    "pátek",
+    "sobota",
+  ];
+} else if (day === 0) {
+  labelsDay = [
+    "pondělí",
+    "úterý",
+    "středa",
+    "čtvrtek",
+    "pátek",
+    "sobota",
+    "neděle",
+  ];
 } else if (day === 1) {
-  labelsDay = "pondělí";
+  labelsDay = [
+    "úterý",
+    "středa",
+    "čtvrtek",
+    "pátek",
+    "sobota",
+    "neděle",
+    "pondělí",
+  ];
 } else if (day === 2) {
-  labelsDay = "úterý";
+  labelsDay = [
+    "středa",
+    "čtvrtek",
+    "pátek",
+    "sobota",
+    "neděle",
+    "pondělí",
+    "úterý",
+  ];
 } else if (day === 3) {
-  labelsDay = "středa";
+  labelsDay = [
+    "čtvrtek",
+    "pátek",
+    "sobota",
+    "neděle",
+    "pondělí",
+    "úterý",
+    "středa",
+  ];
 } else if (day === 4) {
-  labelsDay = "čtvrtek";
+  labelsDay = [
+    "pátek",
+    "sobota",
+    "neděle",
+    "pondělí",
+    "úterý",
+    "středa",
+    "čtvrtek",
+  ];
 } else if (day === 5) {
-  labelsDay = "pátek";
-} else if (day === 6) {
-  labelsDay = "sobota";
+  labelsDay = [
+    "sobota",
+    "neděle",
+    "pondělí",
+    "úterý",
+    "středa",
+    "čtvrtek",
+    "pátek",
+  ];
 }
 
-console.log(labelsDay);
+document.addEventListener("DOMContentLoaded", function (event) {
+  $.get("/admin-data", (data) => {
+    console.log(data.dateTransactions);
+    console.log(data.valueTransactions);
 
-const myChart1 = new Chart(chart1, {
-  type: "bar",
-  data: {
-    labels: labelsDay,
-    datasets: [
-      {
-        label: "Počet nových uživatelů",
-        data: [12, 19, 3, 5, 2, 3, 5],
-        backgroundColor: [
-          "rgba(54, 162, 235, 0.2)",
-          "rgba(54, 162, 235, 0.2)",
-          "rgba(54, 162, 235, 0.2)",
-          "rgba(54, 162, 235, 0.2)",
-          "rgba(54, 162, 235, 0.2)",
-          "rgba(54, 162, 235, 0.2)",
+    const transfers = {
+      dateTransactions: data.dateTransactions,
+      valueTransactions: data.valueTransactions,
+    };
+    // var transfers = {
+    //   dateTransactions: [
+    //     "2024-03-20T15:34:59.641+00:00",
+    //     "2024-03-20T15:34:59.641+00:00",
+    //     "2024-03-21T15:34:59.641+00:00",
+    //     "2024-03-21T15:34:59.641+00:00",
+    //     "2024-03-22T15:34:59.641+00:00",
+    //   ],
+    //   valueTransactions: [100, 200, 50, 75, 150],
+    // };
+    function sumTransactionsByDate(transfers) {
+      var sums = {};
+      for (var i = 0; i < transfers.dateTransactions.length; i++) {
+        var date = transfers.dateTransactions[i].split("T")[0]; // Extrahovat datum z celého řetězce
+        var value = transfers.valueTransactions[i];
+        // Pokud je datum již v objektu sums, přičíst hodnotu transakce
+        if (sums[date]) {
+          sums[date] += value;
+        } else {
+          // Jinak vytvořit nový klíč s hodnotou transakce
+          sums[date] = value;
+        }
+      }
+      // Vytvořit pole s agregovanými hodnotami
+      var aggregatedTransactions = [];
+      for (var date in sums) {
+        aggregatedTransactions.push(sums[date]);
+      }
+      // Získat posledních 7 hodnot z pole
+      var last7Values = aggregatedTransactions.slice(-7);
+      // Pokud je méně než 7 hodnot, doplnit nuly ze začátku pole
+      while (last7Values.length < 7) {
+        last7Values.unshift(0);
+      }
+      return last7Values;
+    }
+
+    // Volání funkce a uložení výsledku do proměnné
+    var sumsByDate = sumTransactionsByDate(transfers);
+
+    // Výpis výsledného pole s posledními 7 hodnotami, doplněné nulami při potřebě
+    console.log(sumsByDate);
+    const myChart1 = new Chart(chart1, {
+      type: "bar",
+      data: {
+        labels: labelsDay,
+        datasets: [
+          {
+            label: "Celková hodnota transakcí",
+            data: sumsByDate,
+            backgroundColor: [
+              "rgba(54, 162, 235, 0.2)",
+              "rgba(54, 162, 235, 0.2)",
+              "rgba(54, 162, 235, 0.2)",
+              "rgba(54, 162, 235, 0.2)",
+              "rgba(54, 162, 235, 0.2)",
+              "rgba(54, 162, 235, 0.2)",
+            ],
+            borderColor: [
+              "rgba(20, 122, 237, 1)",
+              "rgba(20, 122, 237, 1)",
+              "rgba(20, 122, 237, 1)",
+              "rgba(20, 122, 237, 1)",
+              "rgba(20, 122, 237, 1)",
+              "rgba(20, 122, 237, 1)",
+            ],
+            borderWidth: 1,
+          },
         ],
-        borderColor: [
-          "rgba(20, 122, 237, 1)",
-          "rgba(20, 122, 237, 1)",
-          "rgba(20, 122, 237, 1)",
-          "rgba(20, 122, 237, 1)",
-          "rgba(20, 122, 237, 1)",
-          "rgba(20, 122, 237, 1)",
-        ],
-        borderWidth: 1,
       },
-    ],
-  },
-  options: {
-    plugins: {
-      legend: {
-        display: false,
+      options: {
+        responsive: true, // Toto umožní, aby byl graf responzivní
+        maintainAspectRatio: false, // Toto umožní, aby graf mohl měnit výšku společně se šířkou
+        plugins: {
+          legend: {
+            display: false,
+          },
+        },
+        scales: {
+          y: {
+            beginAtZero: true,
+          },
+        },
       },
-    },
-    scales: {
-      y: {
-        beginAtZero: true,
-      },
-    },
-  },
+    });
+  });
 });
-
-const myChart2 = new Chart(chart2, {
-  type: "bar",
-  data: {
-    labels: labelsDay,
-    datasets: [
-      {
-        label: "Počet nových uživatelů",
-        data: [12, 19, 3, 5, 2, 3, 5],
-        backgroundColor: [
-          "rgba(54, 162, 235, 0.2)",
-          "rgba(54, 162, 235, 0.2)",
-          "rgba(54, 162, 235, 0.2)",
-          "rgba(54, 162, 235, 0.2)",
-          "rgba(54, 162, 235, 0.2)",
-          "rgba(54, 162, 235, 0.2)",
-        ],
-        borderColor: [
-          "rgba(20, 122, 237, 1)",
-          "rgba(20, 122, 237, 1)",
-          "rgba(20, 122, 237, 1)",
-          "rgba(20, 122, 237, 1)",
-          "rgba(20, 122, 237, 1)",
-          "rgba(20, 122, 237, 1)",
-        ],
-        borderWidth: 1,
-      },
-    ],
-  },
-  options: {
-    plugins: {
-      legend: {
-        display: false,
-      },
-    },
-    scales: {
-      y: {
-        beginAtZero: true,
-      },
-    },
-  },
-});
-
-// new Chart(document.getElementById("line-chart"), {
-//   type: "line",
-//   data: {
-//     labels: [1500, 1600, 1700, 1750, 1800, 1850, 1900, 1950, 1999, 2050],
-//     datasets: [
-//       {
-//         data: [86, 114, 106, 106, 107, 111, 133, 221, 783, 2478],
-//         label: "Africa",
-//         borderColor: "#3e95cd",
-//         fill: false,
-//       },
-//       {
-//         data: [282, 350, 411, 502, 635, 809, 947, 1402, 3700, 5267],
-//         label: "Asia",
-//         borderColor: "#8e5ea2",
-//         fill: false,
-//       },
-//       {
-//         data: [168, 170, 178, 190, 203, 276, 408, 547, 675, 734],
-//         label: "Europe",
-//         borderColor: "#3cba9f",
-//         fill: false,
-//       },
-//       {
-//         data: [40, 20, 10, 16, 24, 38, 74, 167, 508, 784],
-//         label: "Latin America",
-//         borderColor: "#e8c3b9",
-//         fill: false,
-//       },
-//       {
-//         data: [6, 3, 2, 2, 7, 26, 82, 172, 312, 433],
-//         label: "North America",
-//         borderColor: "#c45850",
-//         fill: false,
-//       },
-//     ],
-//   },
-//   options: {
-//     title: {
-//       display: true,
-//       text: "World population per region (in millions)",
-//     },
-//   },
-// });
-
-// new Chart(document.getElementById("pie-chart"), {
-//   type: "pie",
-//   data: {
-//     labels: ["Africa", "Asia", "Europe", "Latin America", "North America"],
-//     datasets: [
-//       {
-//         label: "Population (millions)",
-//         backgroundColor: [
-//           "#3e95cd",
-//           "#8e5ea2",
-//           "#3cba9f",
-//           "#e8c3b9",
-//           "#c45850",
-//         ],
-//         data: [2478, 5267, 734, 784, 433],
-//       },
-//     ],
-//   },
-//   options: {
-//     title: {
-//       display: true,
-//       text: "Predicted world population (millions) in 2050",
-//     },
-//   },
-// });

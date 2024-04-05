@@ -39,7 +39,7 @@ btnTransfer.addEventListener("click", function (e) {
         Swal.fire({
           icon: "success",
           title: "Platba provedena",
-          text: "Educoiny byly úspěšně převedeny.",
+          text: "Peníze byly úspěšně převedeny.",
           confirmButtonColor: "#51BE7C",
           confirmButtonText: "Hotovo",
         });
@@ -85,7 +85,7 @@ const createMovements = function (userDB) {
     <div class="col col-1" data-label="ID:">${i + 1}</div>
     <div class="col col-2 table-row--${type}" data-label="Název:">${nameTransfer}</div>
     <div class="col col-3 table-row--${type}" data-label="Částka:">${mov} EC</div>
-    <div class="col col-4" data-label="Uživ. jméno:"><a href="/user-profile-username/${usernameTransfer}">${usernameTransfer}</a></div>
+    <div class="col col-4" data-label="Uživ. jméno:">${usernameTransfer}</div>
     <div class="col col-5" data-label="Datum:">${displayDate}</div>
     </li>`;
     movements.insertAdjacentHTML("afterbegin", html);

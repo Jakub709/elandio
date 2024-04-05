@@ -29,8 +29,14 @@ router.post("/", async (req, res, next) => {
     const username = req.body.username.trim();
     const email = req.body.email.trim();
     const emailDomena = email.split("@").pop();
-    const seznamDomen = ["mail.muni.cz", "muni.cz", "elandio.cz", "seznam.cz"];
-    const faculty = req.body.faculty.trim();
+    const seznamDomen = [
+      "mail.muni.cz",
+      "muni.cz",
+      "epptec.cz",
+      "seznam.cz",
+      "gmail.com",
+    ];
+    const job = req.body.job.trim();
     const password = req.body.password;
     const passwordConf = req.body.passwordConf;
     const passwordLength = password.length;
@@ -213,7 +219,7 @@ router.post("/", async (req, res, next) => {
             // });
             // admin data
 
-            return res.redirect("/after-reg");
+            return res.redirect("/bank");
           });
         } else {
           // Uživatel nalezen

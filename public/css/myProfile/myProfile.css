@@ -1,3 +1,7 @@
+.not-show {
+  display: none;
+}
+
 /*===== Active link =====*/
 /* .active {
   color: var(--main-color);

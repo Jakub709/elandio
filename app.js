@@ -7,7 +7,8 @@ const bodyParser = require("body-parser");
 const mongoose = require("./database");
 const session = require("express-session");
 const middleware = require("./utils/requireLogin");
-const middlewareAdmin = require("./utils/adminProtection");
+const middlewareBanker = require("./utils/isBanker");
+
 const User = require("./schemas/UserSchema");
 const cors = require("cors");
 
@@ -24,10 +25,6 @@ const io = require("socket.io")(server, { pingTimeout: 60000 });
 
 app.set("view engine", "ejs");
 app.set("views", "views");
-
-// Admin page Bro
-// const adminRoutes = require("./routes/admin/adminRoutes");
-// app.use("/admin", adminRoutes);
 
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(express.static(path.join(__dirname, "public")));
@@ -54,7 +51,19 @@ app.get("/", async (req, res, next) => {
 
 // Admin
 const adminRoutes = require("./routes/admin/adminRoutes");
-app.use("/admin-secret-page", middlewareAdmin.requireAdmin, adminRoutes);
+const adminDataRoutes = require("./routes/admin/adminDataRoutes");
+app.use(
+  "/admin-secret-page",
+  middleware.requireLogin,
+  middlewareBanker.isBanker,
+  adminRoutes
+);
+app.use(
+  "/admin-data",
+  middleware.requireLogin,
+  middlewareBanker.isBanker,
+  adminDataRoutes
+);
 
 // Error
 app.get("/error", async (req, res, next) => {
@@ -72,9 +81,7 @@ const resetPassEmailRoutes = require("./routes/authentication/resetPassEmailRout
 app.use("/login", middleware.isLoggedIN, loginRoutes);
 app.use("/register", middleware.isLoggedIN, registerRoutes);
 app.use("/account-confirmed", accountConfirmedRoutes);
-app.get("/after-reg", async (req, res, next) => {
-  res.status(200).render("after-reg");
-});
+
 app.get("/after-login", middleware.requireLogin, async (req, res, next) => {
   const users = (await User.find()).length;
   res.status(200).render("after-login", {
@@ -95,58 +102,48 @@ app.get("/logout-page", async (req, res, next) => {
 app.use("/reset-pass", resetPassRoutes);
 app.use("/reset-pass-email", resetPassEmailRoutes);
 
-// Posts
-// - test
-const testRoutes = require("./routes/posts/testRoutes");
-app.use("/posts-list-test", testRoutes);
-// app.get("/posts-list-test", async (req, res, next) => {
-//   res.status(200).render("posts-list-test");
-// });
-
-const postsSearchRoutes = require("./routes/posts/postsSearchRoutes");
-const postDeleteRoutes = require("./routes/posts/postDeleteRoutes");
-const postsListRoutes = require("./routes/posts/postsListRoutes");
-const myPostsRoutes = require("./routes/posts/myPostsRoutes");
-const postsListFollowing = require("./routes/posts/postsListFollowing");
-
-app.use("/posts-search", middleware.requireLogin, postsSearchRoutes);
-app.use("/my-posts", middleware.requireLogin, myPostsRoutes);
-app.use("/post-delete", middleware.requireLogin, postDeleteRoutes);
-app.use("/posts-list", middleware.requireLogin, postsListRoutes);
-app.use("/posts-list-following", middleware.requireLogin, postsListFollowing);
-
 // Users
 const usersSearchRoutes = require("./routes/users/usersSearchRoutes");
 const usersListRoutes = require("./routes/users/usersListRoutes");
-const usersListMapDataRoutes = require("./routes/users/usersListMapDataRoutes");
 const userProfileRoutes = require("./routes/users/userProfileRoutes");
-const followRoutes = require("./routes/users/followRoutes");
-const unFollowRoutes = require("./routes/users/unFollowRoutes");
+
 const userProfileUsernameRoutes = require("./routes/users/userProfileUsernameRoutes");
 
-app.use("/users-search", middleware.requireLogin, usersSearchRoutes);
-app.use("/users-list", middleware.requireLogin, usersListRoutes);
-app.get("/users-list-map", middleware.requireLogin, async (req, res, next) => {
-  res.status(200).render("map");
-});
 app.use(
-  "/users-list-map-data",
+  "/users-search",
   middleware.requireLogin,
-  usersListMapDataRoutes
+  middlewareBanker.isBanker,
+  usersSearchRoutes
 );
-app.use("/user-profile", middleware.requireLogin, userProfileRoutes);
-app.use("/follow", middleware.requireLogin, followRoutes);
-app.use("/unfollow", middleware.requireLogin, unFollowRoutes);
+app.use(
+  "/users-list",
+  middleware.requireLogin,
+  middlewareBanker.isBanker,
+  usersListRoutes
+);
+
+app.use(
+  "/user-profile",
+  middleware.requireLogin,
+  middlewareBanker.isBanker,
+  userProfileRoutes
+);
+
 app.use(
   "/user-profile-username",
   middleware.requireLogin,
+  middlewareBanker.isBanker,
   userProfileUsernameRoutes
 );
 
 // Bank
-const transferRoute = require("./routes/bank/transferRoutes");
+const transferRoutes = require("./routes/bank/transferRoutes");
+const transactionsListRoutes = require("./routes/bank/transactionsListRoutes");
+const transactionsUserRoutes = require("./routes/bank/transactionsUserRoutes");
 
-app.use("/transfer", middleware.requireLogin, transferRoute);
+app.use("/transfer", middleware.requireLogin, transferRoutes);
+app.use("/transactions", middleware.requireLogin, transactionsListRoutes);
+app.use("/transactionsUser", middleware.requireLogin, transactionsUserRoutes);
 app.get("/bank", middleware.requireLogin, async (req, res, next) => {
   const users = (await User.find()).length;
   res.status(200).render("bank", {
@@ -154,13 +151,22 @@ app.get("/bank", middleware.requireLogin, async (req, res, next) => {
   });
 });
 
+app.get(
+  "/transactions-list",
+  middleware.requireLogin,
+  async (req, res, next) => {
+    const users = (await User.find()).length;
+    res.status(200).render("transactions-list");
+  }
+);
+
 // My profile
 const myProfile = require("./routes/myProfile/myProfile");
 const myProfileUpdate = require("./routes/myProfile/myProfileUpdate");
 const myProfileUpdateGeneral = require("./routes/myProfile/myProfileUpdateGeneral");
 const myProfileUpdatePassword = require("./routes/myProfile/myProfileUpdatePassword");
 const myProfileUpdateAbout = require("./routes/myProfile/myProfileUpdateAbout");
-const myProfileWatch = require("./routes/myProfile/myProfileWatchRoutes");
+
 const myProfileUploadPhoto = require("./routes/myProfile/myProfileUploadPhoto");
 
 app.use("/my-profile", middleware.requireLogin, myProfile);
@@ -181,52 +187,4 @@ app.use(
   myProfileUpdatePassword
 );
 
-app.use("/my-profile-watch", middleware.requireLogin, myProfileWatch);
 app.use("/uploads", middleware.requireLogin, myProfileUploadPhoto);
-
-// Messages
-const messagesRoute = require("./routes/messages/messagesRoutes");
-const usersApiRoute = require("./routes/messages/users");
-const chatsApiRoute = require("./routes/messages/chats");
-const messagesApiRoute = require("./routes/messages/messages");
-
-app.use("/messages", middleware.requireLogin, messagesRoute);
-app.use("/api/users", middleware.requireLogin, usersApiRoute);
-app.use("/api/chats", middleware.requireLogin, chatsApiRoute);
-app.use("/api/messages", middleware.requireLogin, messagesApiRoute);
-
-// Notification
-const notificationsRoutes = require("./routes/notifications/notificationsRoutes");
-
-app.use("/notifications", middleware.requireLogin, notificationsRoutes);
-
-// General - right sidebar
-const userProfileSidebar = require("./routes/general/userProfileSidebar");
-
-app.use("/user-profile-sidebar", middleware.requireLogin, userProfileSidebar);
-
-// Socket
-io.on("connection", (socket) => {
-  socket.on("setup", (userData) => {
-    socket.join(userData._id);
-    socket.emit("connected");
-  });
-
-  socket.on("join room", (room) => socket.join(room));
-  socket.on("typing", (room) => socket.in(room).emit("typing"));
-  socket.on("stop typing", (room) => socket.in(room).emit("stop typing"));
-  socket.on("notification received", (room) =>
-    socket.in(room).emit("notification received")
-  );
-
-  socket.on("new message", (newMessage) => {
-    var chat = newMessage.chat;
-
-    if (!chat.users) return console.log("Chat.users not defined");
-
-    chat.users.forEach((user) => {
-      if (user._id == newMessage.sender._id) return;
-      socket.in(user._id).emit("message received", newMessage);
-    });
-  });
-});

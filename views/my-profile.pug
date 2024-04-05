@@ -26,47 +26,25 @@ header.header
     .header__toggle
       i#header-toggle.bx.bx-menu
 // ========== NAV ========== //
-#navbar.nav
+.nav#navbar
   nav.nav__container
     div
-      a.nav__link.nav__logo(href='/posts-list')
+      a.nav__link.nav__logo(href="/posts-list")
         i.bx.bx-world.nav__icon
-        img.header__img(src='https://elandio.cz/images/elandio_logo_sidebar.png' alt='eLandio')
+        img.header__img(src="/images/elandio_logo_sidebar.png" alt="")
       .nav__list
         .nav__items
-          h3.nav__subtitle P&rcaron;&iacute;sp&ecaron;vky
-          a.nav__link(href='/posts-list')
-            i.bx.bx-task.nav__icon
-            span.nav__name Seznam p&rcaron;&iacute;sp&ecaron;vk&uring;
-          a.nav__link(href='/my-posts')
-            i.bx.bx-pencil.nav__icon
-            span.nav__name Moje p&rcaron;&iacute;sp&ecaron;vky
-        .nav__items
-          h3.nav__subtitle U&zcaron;ivatel&eacute;
-          a.nav__link(href='/users-list')
+          h3.nav__subtitle
+          a.nav__link(href="/bank")
+            i.bx.bx-coin.nav__icon
+            span.nav__name Můj účet
+          a.nav__link(href="/my-profile")
             i.bx.bx-user.nav__icon
-            span.nav__name Seznam u&zcaron;ivatel&uring;
-          .nav__dropdown
-            a.nav__link(href='#')
-              i.bx.bx-cog.nav__icon
-              span.nav__name M&uring;j profil
-              i.bx.bx-chevron-down.nav__icon.nav__dropdown-icon
-            .nav__dropdown-collapse
-              .nav__dropdown-content
-                a.nav__dropdown-item(href='/my-profile') Editovat profil
-                a.nav__dropdown-item(href='/my-profile-watch') Zobrazit profil
-                a.nav__dropdown-item(href='/bank') Educoiny
-        .nav__items
-          a.nav__link(href='/notifications')
-            i.bx.bx-bell.nav__icon
-            span.nav__name Upozorn&ecaron;n&iacute;
-          a.nav__link(href='/messages')
-            i.bx.bx-message-rounded.nav__icon
-            span.nav__name Zpr&aacute;vy
-            span#messagesBadge
-    a.nav__link.nav__logout(href='/logout')
+            span.nav__name Osobní nastavení
+
+    a.nav__link.nav__logout(href="/logout")
       i.bx.bx-log-out.nav__icon
-      span.nav__name Odhl&aacute;sit se
+      span.nav__name Odhlásit se
 // ========== CONTENTS ========== //
 main
   .my-profile-page
@@ -109,20 +87,20 @@ main
                           option(value='Zlínský kraj')
                         label(for='region') Bydliště
 
-                    p.heading-input Soci&aacute;ln&iacute; s&iacute;t&ecaron;
+                    p.heading-input.not-show Soci&aacute;ln&iacute; s&iacute;t&ecaron;
                     .grid.grid-row-gap.grid--3-cols
-                      .form-item
+                      .form-item.not-show
                         input#facebook.input-field(type='text' name='facebook' placeholder='')
                         label(for='facebook') Facebook Username
-                      .form-item
+                      .form-item.not-show
                         input#linkedin.input-field(type='text' name='linkedin' placeholder='')
                         label(for='linkedin') LinkedIn Resource ID
-                      .form-item
+                      .form-item.not-show
                         input#instagram.input-field(type='text' name='instagram' placeholder='')
                         label(for='instagram') Instagram Username
-                    p.heading-input Studijní údaje
-                    .grid.grid-row-gap.grid--3-cols
-                      .form-item
+                    p.heading-input.not-show Studijní údaje
+                    .grid.grid-row-gap.grid--3-cols.not-show
+                      .form-item.not-show
                         input#faculty.input-field(type='text' list='categoryList' name='faculty' placeholder='')
                         datalist#categoryList
                           //- option(value='GreenFoxAcademy')
@@ -139,10 +117,10 @@ main
 
                           //- option(value='StartupJobs')
                         label(for='faculty') Fakulta
-                      .form-item
+                      .form-item.not-show
                         input#fieldOfStudy.input-field(type='text' name='fieldOfStudy' placeholder='')
                         label(for='fieldOfStudy') Studijní obor
-                      .form-item
+                      .form-item.not-show
                         input#isNotification.input-field(type='text' list='isNotificationList' name='isNotification' placeholder='')
                         datalist#isNotificationList
                           option(value='povoleno')

@@ -1,0 +1,100 @@
+.section-hero {
+  display: flex;
+  justify-content: center; /* Vycentruje obsah horizontálně */
+  align-items: center; /* Vycentruje obsah vertikálně */
+  min-height: 80vh; /* Minimální výška, aby zabrala celou výšku obrazovky */
+}
+
+.hero {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  padding: 20px; /* Přidá trochu paddingu kolem */
+  max-width: 1200px; /* Maximální šířka celého kontejneru .hero */
+  width: 100%; /* Ujistí se, že .hero zabere maximálně dostupnou šířku */
+}
+
+.hero-description {
+  font-size: 1.4rem;
+  line-height: 1.6;
+}
+
+.hero a {
+  font-size: 1.4rem;
+  color: #374a69;
+  text-decoration: none;
+}
+
+.heading-primary,
+.heading-secondary,
+.heading-tertiary {
+  font-weight: 700;
+  color: #374a69;
+  /* color: #45260a; */
+  /* color: #343a40; */
+  letter-spacing: -0.5px;
+}
+
+.heading-primary {
+  font-size: 5.2rem;
+  line-height: 1.05;
+  margin-bottom: 2.2rem;
+}
+
+.hero-text-box,
+.hero-img-box {
+  flex: 1; /* Každý box zabere rovný díl dostupného prostoru */
+  padding: 20px; /* Přidá padding pro trochu volného prostoru */
+}
+
+.hero-text-box {
+  max-width: 60%; /* Omezuje maximální šířku textového boxu, aby byl výraznější */
+}
+
+.hero-img-box {
+  max-width: 40%; /* Omezuje maximální šířku obrazového boxu */
+  display: flex;
+  justify-content: center; /* Centruje canvas ve flex kontejneru */
+}
+
+#myChart1 {
+  width: 100% !important; /* Zajistí, že canvas bude mít šířku rovnou šířce rodičovského elementu */
+  max-height: 400px; /* Můžete nastavit maximální výšku, aby graf nebyl příliš vysoký na malých obrazovkách */
+  height: auto; /* Umožní grafu, aby měl flexibilní výšku v závislosti na šířce */
+}
+
+.users-imgs-container {
+  display: flex;
+  align-items: center;
+  gap: 1.6rem;
+  margin-top: 1rem;
+}
+
+.users-imgs {
+  display: flex;
+}
+
+.users-imgs img {
+  height: 2.8rem;
+  width: 2.8rem;
+  border-radius: 50%;
+  margin-right: -1rem;
+  border: 3px solid #fff;
+}
+
+.users-imgs img:last-child {
+  margin: 0;
+}
+
+/* Responsive design pro malé obrazovky */
+@media (max-width: 768px) {
+  .hero {
+    flex-direction: column; /* Stack boxy vertikálně na malých obrazovkách */
+  }
+
+  .hero-text-box,
+  .hero-img-box {
+    max-width: 100%; /* Zajistí, že boxy zabírají celou šířku */
+  }
+}

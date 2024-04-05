@@ -24,7 +24,7 @@ router.post("/", async (req, res, next) => {
       //console.log(user._id);
       const emailCode = user.password;
       //console.log(emailCode);
-      const emailText = `<b>eLandio Ti posílá odkaz pro změnu hesla!</b> <br><br> Stačí kliknout na tento <a href=https://elandio.cz/reset-pass> odkaz</a> a použít následující kód:<br> <span style="background-color:#EFF1F7;">${emailCode}</span> <br><br>Krásný den přeje <br> <b>Jakub</b>`;
+      const emailText = `<b>EpptecBank Vám posílá odkaz pro změnu hesla!</b> <br><br> Stačí kliknout na tento <a href=https://elandio.cz/reset-pass> odkaz</a> a použít následující kód:<br> <span style="background-color:#EFF1F7;">${emailCode}</span> <br><br>Krásný den přeje <br> <b>EpptecBank</b>`;
 
       // Nodemailer - odeslání emailu
       require("dotenv").config();

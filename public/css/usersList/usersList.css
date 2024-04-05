@@ -1,11 +1,3 @@
-/*===== From generalInner =====*/
-.active {
-  color: var(--nav-color);
-}
-
-.header__logo {
-  display: none;
-}
 /*========== MAIN ==========*/
 /**************************/
 /* GENERAL REUSABLE COMPONENTS */
@@ -125,54 +117,19 @@
   background-color: #1165bf;
 }
 
-.esfmu::after,
-.esfmu::before {
+.OSVČ::after,
+.OSVČ::before {
   background-color: #c50069;
 }
 
-.fafmu::after,
-.fafmu::before {
+.HPP::after,
+.HPP::before {
   background-color: #527488;
 }
 
-.ffmu::after,
-.ffmu::before {
+.JINÉ::after,
+.JINÉ::before {
   background-color: #5cb4e1;
-}
-
-.fimu::after,
-.fimu::before {
-  background-color: #f8da08;
-}
-
-.fspsmu::after,
-.fspsmu::before {
-  background-color: #74b8aa;
-}
-
-.lfmu::after,
-.lfmu::before {
-  background-color: #c62326;
-}
-
-.pdfmu::after,
-.pdfmu::before {
-  background-color: #ce661d;
-}
-
-.prfmu::after,
-.prfmu::before {
-  background-color: #8f448e;
-}
-
-.prirodaMU::after,
-.prirodaMU::before {
-  background-color: #5aa353;
-}
-
-.fssmu::after,
-.fssmu::before {
-  background-color: #3d885a;
 }
 
 .user-info .picture img {

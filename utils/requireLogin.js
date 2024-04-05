@@ -8,7 +8,13 @@ exports.requireLogin = (req, res, next) => {
 
 exports.isLoggedIN = (req, res, next) => {
   if (req.session && req.session.user) {
-    return res.redirect("/posts-list");
+    if (req.session.user.username == "banker") {
+      return res.redirect("/admin-secret-page");
+    } else {
+      return res.redirect("/bank");
+    }
+
+    return res.redirect("/bank");
   } else {
     return next();
   }
