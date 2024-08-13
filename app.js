@@ -197,17 +197,6 @@ app.use(
 app.use("/my-profile-watch", middleware.requireLogin, myProfileWatch);
 app.use("/uploads", middleware.requireLogin, myProfileUploadPhoto);
 
-// Messages
-const messagesRoute = require("./routes/messages/messagesRoutes");
-const usersApiRoute = require("./routes/messages/users");
-const chatsApiRoute = require("./routes/messages/chats");
-const messagesApiRoute = require("./routes/messages/messages");
-
-app.use("/messages", middleware.requireLogin, messagesRoute);
-app.use("/api/users", middleware.requireLogin, usersApiRoute);
-app.use("/api/chats", middleware.requireLogin, chatsApiRoute);
-app.use("/api/messages", middleware.requireLogin, messagesApiRoute);
-
 // Notification
 const notificationsRoutes = require("./routes/notifications/notificationsRoutes");
 
