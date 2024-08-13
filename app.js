@@ -61,6 +61,17 @@ app.get("/error", async (req, res, next) => {
   res.status(200).render("error");
 });
 
+// Messages
+const messagesRoute = require("./routes/messages/messagesRoutes");
+const usersApiRoute = require("./routes/messages/users");
+const chatsApiRoute = require("./routes/messages/chats");
+const messagesApiRoute = require("./routes/messages/messages");
+
+app.use("/messages", middleware.requireLogin, messagesRoute);
+app.use("/api/users", middleware.requireLogin, usersApiRoute);
+app.use("/api/chats", middleware.requireLogin, chatsApiRoute);
+app.use("/api/messages", middleware.requireLogin, messagesApiRoute);
+
 // Authentication
 const loginRoutes = require("./routes/authentication/loginRoutes");
 const registerRoutes = require("./routes/authentication/registerRoutes");
@@ -108,12 +119,14 @@ const postDeleteRoutes = require("./routes/posts/postDeleteRoutes");
 const postsListRoutes = require("./routes/posts/postsListRoutes");
 const myPostsRoutes = require("./routes/posts/myPostsRoutes");
 const postsListFollowing = require("./routes/posts/postsListFollowing");
+const postsListRoutesVue = require("./routes/posts/postsListRoutesVue");
 
 app.use("/posts-search", middleware.requireLogin, postsSearchRoutes);
 app.use("/my-posts", middleware.requireLogin, myPostsRoutes);
 app.use("/post-delete", middleware.requireLogin, postDeleteRoutes);
 app.use("/posts-list", middleware.requireLogin, postsListRoutes);
 app.use("/posts-list-following", middleware.requireLogin, postsListFollowing);
+app.use("/posts-list-vue", middleware.requireLogin, postsListRoutesVue);
 
 // Users
 const usersSearchRoutes = require("./routes/users/usersSearchRoutes");
