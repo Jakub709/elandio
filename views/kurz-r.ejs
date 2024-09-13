@@ -67,6 +67,13 @@
     /></a>
     <nav class="main-nav">
       <ul class="main-nav-list">
+        <li class="nav-item-dropdown">
+          <a class="nav-kurzy" href="#">Kurzy ✍️</a>
+          <ul class="dropdown-menu">
+            <li><a href="/kurz-python">Kurz Python</a></li>
+            <li><a href="/kurz-r">Kurz R</a></li>
+          </ul>
+        </li>
         <li>
           <a class="main-nav-link nav-log" href="/register">Registrace</a>
         </li>
@@ -87,16 +94,21 @@
       <div class="hero">
         <div class="hero-text-box">
           <h1 class="heading-primary">
-            Nový člen rodu,<br /><span class="blue">Jakub Solnička</span>
+            Datová analýza<br /><span class="blue">v jazyce R</span>
           </h1>
           <p class="hero-description">
-            Hledáte zapáleného analytika a programátora v jednom?
-            <b></b>. Stát se členem rodu House of Řezáč je příležitost, kterou
-            bych s radostí využil.
+            Chcete se stát expertem na datovou analýzu v R?
+            <b>Vstupte do světa efektivní datové analýzy</b> s naším intenzivním
+            kurzem, který vás provede od základů až po pokročilé techniky.
+            Naučte se využívat sílu jazyka R a balíčků jako tidyverse k rychlé a
+            efektivní analýze vašich dat. Přihlaste se nyní a posuňte své
+            analytické dovednosti na novou úroveň!
           </p>
           <a class="btn btn--full margin-right-sm" href="/register"
-            >Stát se eLandistou</a
-          ><a class="btn btn--outline" href="#how">Dozvědět se více</a>
+            >Registrace</a
+          ><a class="btn btn--outline" href="https://www.rlandio.cz"
+            >Učebnice R</a
+          >
         </div>
         <div class="hero-img-box">
           <picture>
@@ -106,105 +118,137 @@
         </div>
       </div>
     </section>
-    <section class="section-featured">
-      <div class="container">
-        <h2 class="heading-featured-in">V čem pracuji</h2>
-        <div class="logos">
-          <img src="images/logos/node.png" alt="node logo" />
-          <img src="images/logos/html.png" alt="usa-today logo" /><img
-            src="images/logos/the-new-york-times.png"
-            alt="the-new-yorks-times logo"
-          /><img
-            src="images/logos/business-insider.png"
-            alt="business-insider logo"
-          /><img src="images/logos/forbes.png" alt="forbes" />
-        </div>
-      </div>
-    </section>
+
     <section class="section-how" id="how">
       <div class="container">
-        <span class="subheading">ŽIVOTOPIS</span>
+        <span class="subheading">Kurz</span>
         <h2 class="heading-secondary">
-          Můj život „programátora“ ve čtyřech bodech
+          Pokročilá datová analýza v R s použitím tidyverse - Osnova kurzu
         </h2>
       </div>
       <div class="container grid grid--2-cols grid--center-v">
         <!-- STEP 01-->
         <div class="step-text-box">
           <p class="step-number">01</p>
-          <h3 class="heading-tertiary">Kdo jsem?</h3>
+          <h3 class="heading-tertiary">Seznámení s pokročilým tidyverse</h3>
           <p class="step-description">
-            Jmenuji se Jakub Solnička, vystudoval jsem Ekonomicko-správní
-            fakultu MU, ale v posledních letech se věnuji práci s daty a zejména
-            programování. Učím datovou analýzu v R na ESF MU, pracuji v HTML,
-            CSS, JavaScriptu a Vue.js na frontendu, na backendu je mým miláčkem
-            Node.js. Jsem ženatý, mám malou dceru a jsem těsně po rekonstrukci
-            domu (dle statistik tudíž patřím mezi potenciálně vysoce loajální
-            zaměstnance :).
+            <strong>1. Úvod do tidyverse:</strong><br />
+            Rychlé shrnutí základů pro práci s tidyverse.<br /><br />
+            <strong>2. Pokročilé funkce dplyr:</strong><br />
+            Detailnější pohled na funkce jako `mutate`, `summarize`, a `across`
+            pro složitější operace s daty.<br /><br />
+            <strong>3. Práce s pipeline (%>%):</strong><br />
+            Efektivní práce s řetězením funkcí pro lepší čitelnost kódu.
           </p>
         </div>
-        <div class="step-img-box">
-          <img
-            class="step-img"
-            src="images/app/app-screen-1-new.jpg"
-            alt="iPhone app        preferences selection screen"
-          />
-        </div>
+
         <!-- STEP 02-->
-        <div class="step-img-box">
-          <img
-            class="step-img"
-            src="images/app/app-screen-2.jpg"
-            alt="iPhone app        meal approving plan screen"
-          />
-        </div>
         <div class="step-text-box">
           <p class="step-number">02</p>
-          <h3 class="heading-tertiary">Jak dlouho se věnuji práci s daty?</h3>
+          <h3 class="heading-tertiary">
+            Transformace a manipulace s datovými rámci
+          </h3>
           <p class="step-description">
-            Před sedmi lety jsem se před nástupem na doktorát začal učit jazyk R
-            a napsal si pro sebe vlastní učebnici datové analýzy rlandio.cz
-            (protože jsem nenašel žádnou, která by mi vyhovovala :-)). eRko jsem
-            následně začal v roce 2020 na své almma mater i učit a učím ho
-            dodnes. Výuka je jedna z věcí, která mě naplňuje. Praktickou
-            zkušenost s datovou analýzou mám díky projektu Nová mobilita, kde
-            jsem se zabýval železniční dopravou.
+            <strong>1. Sloučení a spojování dat:</strong><br />
+            Pokročilé operace s `left_join`, `right_join`, `inner_join`, a
+            `full_join`.<br /><br />
+            <strong>2. Efektivní použití `pivot_longer` a `pivot_wider`:</strong
+            ><br />
+            Transformace dat mezi širokou a dlouhou formou.<br /><br />
+            <strong>3. Manipulace s faktory a řetězci:</strong><br />
+            Efektivní práce s kategoriálními proměnnými a textovými daty.
           </p>
         </div>
+
         <!-- STEP 03-->
         <div class="step-text-box">
           <p class="step-number">03</p>
-          <h3 class="heading-tertiary">Jak Dlouho programuji?</h3>
+          <h3 class="heading-tertiary">Pokročilá vizualizace s ggplot2</h3>
           <p class="step-description">
-            Práce s daty je zajímavá, ale ke štěstí mi nestačila, neb jsem
-            kreativní člověk. Začal jsem se tedy před dvěma lety učit web
-            development. Mým snem bylo vytvořit a spustit vlastní vzdělávací
-            sociální síť elandio, což se i povedlo :). Chceteli se na ní
-            podívat, zaregistrujte se. Postačí fiktivní email neco@mail.muni.cz.
+            <strong>1. Vrstvy v ggplot2:</strong><br />
+            Práce s různými vrstvami grafů a přidávání dalších estetických
+            prvků.<br /><br />
+            <strong>2. Facetování a tvorba více grafů:</strong><br />
+            Použití `facet_wrap` a `facet_grid` pro přehledné zobrazení více
+            kategorií.<br /><br />
+            <strong>3. Přizpůsobení grafů:</strong><br />
+            Úpravy os, popisků, legend a použití vlastních barevných škál.
           </p>
         </div>
-        <div class="step-img-box">
-          <img
-            class="step-img"
-            src="images/app/app-screen-3.jpg"
-            alt="iPhone app        delivery screen"
-          />
-        </div>
-        <!-- STEP 02-->
-        <div class="step-img-box">
-          <img
-            class="step-img"
-            src="images/app/app-screen-4.jpg"
-            alt="iPhone app        meal approving plan screen"
-          />
-        </div>
+
+        <!-- STEP 04-->
         <div class="step-text-box">
           <p class="step-number">04</p>
-          <h3 class="heading-tertiary">Těším se na viděnou</h3>
+          <h3 class="heading-tertiary">
+            Efektivní práce s daty a pipe operátory
+          </h3>
           <p class="step-description">
-            Ač žijeme v digitálním věku, nic nenahradí osobní kontakt. Budete-li
-            tak mít zájem dovědět se o mě více, sednu do auta a rád se s vámi
-            uvidím. <a class="link" href="/register">teď 🙂</a>.
+            <strong>1. Optimalizace s pipe (%>%) :</strong><br />
+            Komplexní příklady použití pipe pro efektivní kódování.<br /><br />
+            <strong>2. Použití funkce across pro hromadné úpravy:</strong><br />
+            Hromadné úpravy proměnných pomocí tidyverse funkcí.<br /><br />
+            <strong>3. Práce s nested daty:</strong><br />
+            Zpracování a vizualizace hierarchických dat.
+          </p>
+        </div>
+
+        <!-- STEP 05-->
+        <div class="step-text-box">
+          <p class="step-number">05</p>
+          <h3 class="heading-tertiary">Tvorba funkčních skriptů v R</h3>
+          <p class="step-description">
+            <strong>1. Tvorba vlastních funkcí:</strong><br />
+            Jak vytvářet vlastní funkce pro opakující se operace.<br /><br />
+            <strong>2. Optimalizace kódu pomocí funkcionálních funkcí:</strong
+            ><br />
+            Použití funkcí jako `map`, `reduce`, a `walk`.<br /><br />
+            <strong>3. Základy reaktivního programování:</strong><br />
+            Vytvoření dynamických skriptů a interaktivních aplikací.
+          </p>
+        </div>
+
+        <!-- STEP 06-->
+        <div class="step-text-box">
+          <p class="step-number">06</p>
+          <h3 class="heading-tertiary">
+            Pokročilé operace s časovými daty a datovými typy
+          </h3>
+          <p class="step-description">
+            <strong>1. Práce s časovými daty v lubridate:</strong><br />
+            Manipulace a výpočty s datovými a časovými proměnnými.<br /><br />
+            <strong>2. Výpočty s numerickými daty:</strong><br />
+            Transformace a normalizace numerických proměnných.<br /><br />
+            <strong>3. Pokročilé filtrování dat:</strong><br />
+            Filtrování a výběr dat pomocí logických výrazů.
+          </p>
+        </div>
+
+        <!-- STEP 07-->
+        <div class="step-text-box">
+          <p class="step-number">07</p>
+          <h3 class="heading-tertiary">
+            Pokročilá data wrangling s dplyr a tidyr
+          </h3>
+          <p class="step-description">
+            <strong>1. Složitější filtrace a výpočty:</strong><br />
+            Pokročilé příklady použití `filter`, `select`, a `mutate`.<br /><br />
+            <strong>2. Vytváření nových proměnných:</strong><br />
+            Použití `mutate` pro komplexní výpočty a transformace dat.<br /><br />
+            <strong>3. Shrnutí a agregace dat:</strong><br />
+            Skupinové operace pomocí `group_by` a `summarize`.
+          </p>
+        </div>
+
+        <!-- STEP 08-->
+        <div class="step-text-box">
+          <p class="step-number">08</p>
+          <h3 class="heading-tertiary">Závěrečný projekt a prezentace</h3>
+          <p class="step-description">
+            <strong>1. Zadání projektu:</strong><br />
+            Samostatná práce na projektu zaměřeném na aplikaci pokročilých
+            technik tidyverse.<br /><br />
+            <strong>2. Prezentace výsledků:</strong><br />
+            Prezentace výsledků a zpětná vazba od lektora a spolužáků.
           </p>
         </div>
       </div>

@@ -29,9 +29,9 @@
     href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;600;700&amp;display=swap"
     rel="stylesheet"
   />
-  <link rel="stylesheet" href="/css/index/general.css" />
-  <link rel="stylesheet" href="/css/index/index.css" />
-  <link rel="stylesheet" href="/css/index/queries.css" />
+  <link rel="stylesheet" href="css/index/general.css" />
+  <link rel="stylesheet" href="css/index/index.css" />
+  <link rel="stylesheet" href="css/index/queries.css" />
   <script
     type="module"
     src="https://unpkg.com/ionicons@5.4.0/dist/ionicons/ionicons.esm.js"
@@ -67,18 +67,13 @@
     /></a>
     <nav class="main-nav">
       <ul class="main-nav-list">
-        <li class="nav-item-dropdown">
-          <a class="nav-kurzy" href="#">Kurzy ✍️</a>
-          <ul class="dropdown-menu">
-            <li><a href="/kurz-python">Kurz Python</a></li>
-            <li><a href="/kurz-r">Kurz R</a></li>
-          </ul>
-        </li>
         <li>
           <a class="main-nav-link nav-log" href="/register">Registrace</a>
         </li>
         <li>
-          <a class="main-nav-link nav-cta" href="/login">Přihlásit se</a>
+          <a class="main-nav-link nav-cta" href="/login"
+            >P&rcaron;ihl&aacute;sit se</a
+          >
         </li>
       </ul>
     </nav>
@@ -92,154 +87,144 @@
       <div class="hero">
         <div class="hero-text-box">
           <h1 class="heading-primary">
-            Já učím tebe,<br />jiný <span class="blue">učí mě</span>
+            Datová analýza<br /><span class="blue">v jazyce R</span>
           </h1>
           <p class="hero-description">
-            Budujeme komunitu zalo&zcaron;enou na sd&iacute;len&eacute;m
-            vzd&ecaron;l&aacute;v&aacute;n&iacute;. Staň se i ty součástí světa
-            eLandio, v němž lidé směňují své znalosti a dovednosti v unikátní
-            ekonomice!
+            Chcete se stát expertem na datovou analýzu v R?
+            <b>Vstupte do světa efektivní datové analýzy</b> s naším intenzivním
+            kurzem, který vás provede od základů až po pokročilé techniky.
+            Naučte se využívat sílu jazyka R a balíčků jako tidyverse k rychlé a
+            efektivní analýze vašich dat. Přihlaste se nyní a posuňte své
+            analytické dovednosti na novou úroveň!
           </p>
           <a class="btn btn--full margin-right-sm" href="/register"
             >Stát se eLandistou</a
           ><a class="btn btn--outline" href="#how">Dozvědět se více</a>
-          <div class="users-imgs-container">
-            <div class="users-imgs">
-              <img
-                src="images/customers/fotografka.jpg"
-                alt="Customer photo"
-              /><img
-                class="small-screen"
-                src="images/customers/ilona.jpg"
-                alt="Customer photo"
-              /><img src="images/customers/buba.jpg" alt="Customer photo" /><img
-                class="small-screen"
-                src="images/customers/petr.jpg"
-                alt="Customer photo"
-              /><img
-                class="small-screen"
-                src="images/customers/eva.jpg"
-                alt="Customer photo"
-              /><img src="images/customers/iva.jpg" alt="Customer photo" />
-            </div>
-            <!-- <p class="users-text">
-              Je nás již 41. <span>Přidej se k nám!</span>
-            </p> -->
-            <p class="users-text">
-              <span>Přidej se k nám!</span>
-            </p>
-          </div>
         </div>
         <div class="hero-img-box">
           <picture>
-            <source srcset="images/index.jpg" type="image/png" />
+            <source srcset="images/Jakub.jpg" type="image/png" />
             <img class="hero-img" src="images/developer.png" alt="" />
           </picture>
         </div>
       </div>
     </section>
-    <section class="section-featured">
-      <div class="container">
-        <h2 class="heading-featured-in">Učte se s námi</h2>
-        <div class="logos">
-          <img src="images/logos/python.png" alt="python" /><img
-            src="images/logos/flutterflow.png"
-            alt="flutterflow"
-          /><img src="images/logos/r.png" alt="r" /><img
-            src="images/logos/kahoot.png"
-            alt="kahoot"
-          /><img src="images/logos/js.png" alt="js" /><img
-            src="images/logos/canva.png"
-            alt="canva"
-          /><img src="images/logos/chatgpt.png" alt="chatgpt" />
-        </div>
-      </div>
-    </section>
+
     <section class="section-how" id="how">
       <div class="container">
-        <span class="subheading">Kurzy eLandio</span>
+        <span class="subheading">Kurz</span>
         <h2 class="heading-secondary">
-          Co je to eLandio a jak funguje sdílené vzdělávání?
+          Základy datové analýzy v R - Osnova kurzu
         </h2>
       </div>
       <div class="container grid grid--2-cols grid--center-v">
         <!-- STEP 01-->
         <div class="step-text-box">
           <p class="step-number">01</p>
-          <h3 class="heading-tertiary">Co je to sdílené vzdělávání?</h3>
+          <h3 class="heading-tertiary">Den 1: Úvod do R a Tidyverse</h3>
           <p class="step-description">
-            <b>„Já učím tebe, jiný učí mě.“</b> Středobodem eLandia jsou
-            příspěvky ve formě nabídek a poptávek, ve kterých můžeš nabízet
-            (respektive poptávat) doučování, skupinové kurzy, pomoc s úkoly,
-            zkrátka cokoliv tě jenom napadne. Prostředkem směny však nejsou
-            peníze ve tvé peněžence, nýbrž virtuální měna Educoin, kterou si lze
-            vydělat pouze od ostatních uživatelů.
+            <strong>1. Úvod do R a Tidyverse (1 hodina)</strong><br />
+            Přehled jazyka R a úvod do balíčku Tidyverse, instalace a
+            konfigurace prostředí. <br /><br />
+            <strong
+              >2. Základní manipulace s daty pomocí dplyr (3 hodiny)</strong
+            ><br />
+            Filtrování, řazení, výběr dat, skupinové operace, práce s více
+            datovými rámci. <br /><br />
+            <strong
+              >3. Práce s daty v tidy formátu pomocí tidyr (2 hodiny)</strong
+            ><br />
+            Konverze dat, práce s chybějícími hodnotami, nestování datových
+            rámců. <br /><br />
+            <strong>4. Vizualizace dat pomocí ggplot2 (2 hodiny)</strong><br />
+            Základy tvorby grafů, přizpůsobení vizualizací, práce s facetingem.
           </p>
         </div>
         <div class="step-img-box">
           <img
             class="step-img"
-            src="images/app/app-screen-1.jpg"
-            alt="iPhone app        preferences selection screen"
+            src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwzNjUyOXwwfDF8c2VhcmNofDF8fGxhYnRvcHxlbnwwfHx8fDE2NTkwMjYzNjI&ixlib=rb-1.2.1&q=80&w=400"
+            alt="Introduction to R and Tidyverse"
           />
         </div>
         <!-- STEP 02-->
         <div class="step-img-box">
           <img
             class="step-img"
-            src="images/app/app-screen-2.jpg"
-            alt="iPhone app        meal approving plan screen"
+            src="https://images.unsplash.com/photo-1556155092-8707de31f9c4?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwzNjUyOXwwfDF8c2VhcmNofDR8fGRhdGF8ZW58MHx8fHwxNjU5MDI2Njgw&ixlib=rb-1.2.1&q=80&w=400"
+            alt="Data manipulation in R"
           />
         </div>
         <div class="step-text-box">
           <p class="step-number">02</p>
-          <h3 class="heading-tertiary">Jak funguje Educoin?</h3>
+          <h3 class="heading-tertiary">
+            Den 2: Pokročilé techniky a modelování
+          </h3>
           <p class="step-description">
-            Ekonomika eLandia funguje jako kterákoliv jiná, na základě nabídky a
-            poptávky. Do začátku získáš 500 Educoinů, aby se trh mohl pořádně
-            rozeběhnout. Další Educoiny si již musíš vydělat od ostatních
-            studentů. Ukažme si příklad. Jsi přeborníkem v matematice a
-            potřebuješ se zbavit strachu hovořit anglicky? Vydělej si Educoiny
-            např. skrze doučování a následně si vyber mezi spolužáky toho
-            nejlepšího angličtináře, který ti pomůže rozmluvit se.
+            <strong>1. Pokročilé transformace dat (2 hodiny)</strong><br />
+            Použití funkcí map, manipulace s řetězci, práce s časovými daty.
+            <br /><br />
+            <strong
+              >2. Exploratory Data Analysis (EDA) pomocí tidyverse (2
+              hodiny)</strong
+            ><br />
+            Automatizace EDA, multivariátní analýza, případové studie.
+            <br /><br />
+            <strong>3. Práce s časovými řadami (2 hodiny)</strong><br />
+            Zpracování časových řad, sezónní dekompozice, vizualizace a
+            modelování. <br /><br />
+            <strong
+              >4. Vytváření vlastních funkcí a balíčků v R (2 hodiny)</strong
+            ><br />
+            Tvorba vlastních funkcí, dokumentace a distribuce balíčků.
           </p>
         </div>
         <!-- STEP 03-->
         <div class="step-text-box">
           <p class="step-number">03</p>
-          <h3 class="heading-tertiary">Jak ti eLandio pomůže?</h3>
+          <h3 class="heading-tertiary">
+            Den 3: Specializované aplikace a reporting
+          </h3>
           <p class="step-description">
-            eLandio je příležitostí, kterak tvé dovednosti a znalosti můžeš
-            směnit s dalšími spolužáky. Je to šance poznat nové lidi a naučit se
-            třeba nový cizí jazyk či zvládnout náročný test z biochemie. eLandio
-            však není pouze o studiu, ale i o zábavě a setkávání. Nabízet a
-            poptávat můžeš zkrátka vše. Máš doma např. 3D tiskárnu? Tak vytvoř
-            kurz práce s ní. Fantazii se meze nekladou.
+            <strong>1. Integrace Tidyverse s dalšími nástroji (2 hodiny)</strong
+            ><br />
+            Práce s databázemi, integrace s Pythonem, případová studie.
+            <br /><br />
+            <strong>2. Práce s rozsáhlými datovými soubory (2 hodiny)</strong
+            ><br />
+            Efektivní zpracování velkých datasetů, optimalizace paměti a výkonu.
+            <br /><br />
+            <strong>3. Pokročilé modelování a analýza dat (3 hodiny)</strong
+            ><br />
+            Regresní modely, klasifikace, bootstrapping, cross-validation.
+            <br /><br />
+            <strong>4. Prezentace výsledků a reporting (1 hodina)</strong><br />
+            Automatizace reportingu, tvorba interaktivních dashboardů, závěrečný
+            projekt.
           </p>
         </div>
         <div class="step-img-box">
           <img
             class="step-img"
-            src="images/app/app-screen-3.jpg"
-            alt="iPhone app        delivery screen"
+            src="https://images.unsplash.com/photo-1517430816045-df4b7de01f17?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwzNjUyOXwwfDF8c2VhcmNofDJ8fHdvcmtpbmd8ZW58MHx8fHwxNjU5MDI2NzU1&ixlib=rb-1.2.1&q=80&w=400"
+            alt="Advanced data analysis in R"
           />
         </div>
-        <!-- STEP 02-->
+        <!-- STEP 04-->
         <div class="step-img-box">
           <img
             class="step-img"
-            src="images/app/app-screen-4.jpg"
-            alt="iPhone app        meal approving plan screen"
+            src="https://images.unsplash.com/photo-1554164648-20dc5e7c4d23?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwzNjUyOXwwfDF8c2VhcmNofDF8fHN1Y2Nlc3N8ZW58MHx8fHwxNjU5MDI2Nzg4&ixlib=rb-1.2.1&q=80&w=400"
+            alt="Final project presentation"
           />
         </div>
         <div class="step-text-box">
           <p class="step-number">04</p>
-          <h3 class="heading-tertiary">Jak se stát eLandistou?</h3>
+          <h3 class="heading-tertiary">Závěr kurzu a další kroky</h3>
           <p class="step-description">
-            Součástí komunity eLandio se může stát každý student. git add .Čím
-            více nás bude, tím větší hodnotu ti eLandio bude moci nabídnout. Tak
-            na nic nečekej a zaregistruj se právě
-            <a class="link" href="/register">teď 🙂</a>.
+            Shrnutí klíčových konceptů a technik, diskuse o best practices,
+            řešení individuálních dotazů. Připravte se na další krok ve vaší
+            kariéře datového analytika v R!
           </p>
         </div>
       </div>

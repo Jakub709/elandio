@@ -1,6 +1,6 @@
 const express = require("express");
 const app = express();
-const port = process.env.PORT || 3012;
+const port = process.env.PORT || 3013;
 const compression = require("compression");
 const path = require("path");
 const bodyParser = require("body-parser");
@@ -50,6 +50,19 @@ app.get("/", async (req, res, next) => {
   res.status(200).render("index", {
     counter: users,
   });
+});
+
+// Kurzy
+app.get("/kurzy", async (req, res, next) => {
+  res.status(200).render("kurzy", {});
+});
+
+app.get("/kurz-r", async (req, res, next) => {
+  res.status(200).render("kurz-r", {});
+});
+
+app.get("/kurz-python", async (req, res, next) => {
+  res.status(200).render("kurz-python", {});
 });
 
 // Admin

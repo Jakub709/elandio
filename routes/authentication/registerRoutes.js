@@ -29,7 +29,14 @@ router.post("/", async (req, res, next) => {
     const username = req.body.username.trim();
     const email = req.body.email.trim();
     const emailDomena = email.split("@").pop();
-    const seznamDomen = ["mail.muni.cz", "muni.cz", "elandio.cz", "seznam.cz"];
+    const seznamDomen = [
+      "mail.muni.cz",
+      "muni.cz",
+      "elandio.cz",
+      "seznam.cz",
+      "gmail.com",
+      "email.cz",
+    ];
     const faculty = req.body.faculty.trim();
     const password = req.body.password;
     const passwordConf = req.body.passwordConf;
