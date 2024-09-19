@@ -23,6 +23,38 @@
 /* NAVIGATION */
 /**************************/
 
+/* Skryje dropdown menu ve výchozím stavu */
+.dropdown-menu {
+  display: none;
+  position: absolute;
+  background-color: #fff;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+}
+
+/* Stylování pro položky v dropdown menu */
+.dropdown-menu li {
+  list-style: none;
+}
+
+/* Zobrazí dropdown menu při najetí na položku "Kurzy" */
+.nav-item-dropdown:hover .dropdown-menu {
+  display: block;
+}
+
+/* Stylování pro odkazy v dropdown menu */
+.dropdown-menu li a {
+  display: block;
+  padding: 10px;
+  color: var(--main-color);
+  text-decoration: none;
+  font-size: 1.8rem;
+}
+
+.dropdown-menu li a:hover {
+  background-color: #f0f0f0;
+}
+
 .nav-kurzy:link,
 .nav-kurzy:visited {
   padding: 1.2rem 2.4rem;
